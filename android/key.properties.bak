@@ -1,0 +1,4 @@
+storePassword=temres
+keyPassword=temres
+keyAlias=upload
+storeFile=/Users/oqhadev/Projects/temres2024/teman_sp/android/upload-keystore.id.temres.temansp.jks
