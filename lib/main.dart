@@ -31,7 +31,6 @@ class App extends StatelessWidget {
       defaultTransition: Transition.fadeIn,
       // initialRoute: AppRoutes.splash,
       // getPages: AppPages.list,
-      debugShowCheckedModeBanner: false,
       // theme: AppTheme.light,
       themeMode: ThemeMode.system,
     );

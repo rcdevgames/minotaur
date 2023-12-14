@@ -1,4 +1,4 @@
-package com.polmantic.canvasing_jatim_12
+package com.polmantic.canvassing_jatim2
 
 import io.flutter.embedding.android.FlutterActivity
 

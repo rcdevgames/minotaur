@@ -355,7 +355,7 @@ class PendukungProvider extends GetConnect {
     box.put('135', {'nama': 'PALENGAAN', 'id': '135', 'kabkota': 'PAMEKASAN'});
     box.put('136', {'nama': 'PADEMAWU', 'id': '136', 'kabkota': 'PAMEKASAN'});
     box.put('137', {'nama': 'GALIS', 'id': '137', 'kabkota': 'PAMEKASAN'});
-    box.put('138', {'nama': 'LARANGAN', 'id': '138', 'kabkota': 'PAMEKASAN'})
+    box.put('138', {'nama': 'LARANGAN', 'id': '138', 'kabkota': 'PAMEKASAN'});
   }
 
   Future<List<KecamatanModel>?> fetchKecamatan(String kabId) async {
