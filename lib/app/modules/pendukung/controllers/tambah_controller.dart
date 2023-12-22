@@ -7,6 +7,7 @@ import 'package:location/location.dart';
 import 'package:temres_apps/app/core/constant/color.dart';
 import 'package:temres_apps/app/core/helper/base_controller.dart';
 import 'package:temres_apps/app/core/widget/image/image_controller.dart';
+import 'package:temres_apps/app/core/widget/image/image_controller2.dart';
 import 'package:temres_apps/app/modules/home/controllers/home_controller.dart';
 import 'package:temres_apps/app/modules/pendukung/provider/kabupaten_model.dart';
 import 'package:temres_apps/app/modules/pendukung/provider/kecamatan_model.dart';
@@ -22,8 +23,8 @@ class TambahController extends GetxController with BaseController {
   final PendukungProvider pendukungProvider = PendukungProvider();
   final HomeController homeController = Get.put(HomeController());
   final PallateColors pallateColors = PallateColors();
-  final ImageController imageController = new ImageController();
-  final ImageController imageController2 = new ImageController();
+  final ImageController imageController = Get.put(ImageController());
+  final ImageController2 imageController2 = Get.put(ImageController2());
 
   final GlobalKey<FormState> pendukungFormKey = GlobalKey<FormState>();
 

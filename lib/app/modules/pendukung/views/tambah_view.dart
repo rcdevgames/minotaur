@@ -287,35 +287,6 @@ class TambahView extends GetView<TambahController> with BaseController {
                     const SizedBox(
                       height: 15,
                     ),
-                    Forms(
-                      contrroler: controller.keluarga5,
-                      enable: true,
-                      hintext: 'Nama',
-                      label: 'Nama',
-                      obscureText: false,
-                      suffixText: '',
-                      typeKeyboard: TextInputType.text,
-                      validator: (value) => null,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    FormOption(
-                      controller: controller.pilihanPartai2019,
-                      options: partai2019Items,
-                      title: 'Pilihan Partai tahun lalu',
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    FormOption(
-                      controller: controller.pilihanPartai,
-                      options: partai2024Items,
-                      title: 'Pilihan Partai tahun 2024',
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

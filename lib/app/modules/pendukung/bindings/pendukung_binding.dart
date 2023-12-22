@@ -4,6 +4,7 @@ import 'package:temres_apps/app/modules/pendukung/controllers/tambah_controller.
 import 'package:temres_apps/app/modules/pendukung/controllers/tambah_keluarga_controller.dart';
 
 import '../../../core/widget/image/image_controller.dart';
+import '../../../core/widget/image/image_controller2.dart';
 import '../controllers/pendukung_controller.dart';
 
 class PendukungBinding extends Bindings {
@@ -23,6 +24,10 @@ class PendukungBinding extends Bindings {
 
     Get.lazyPut<ImageController>(
       () => ImageController(),
+    );
+    
+    Get.lazyPut<ImageController2>(
+      () => ImageController2(),
     );
   }
 }

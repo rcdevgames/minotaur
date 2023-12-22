@@ -15,7 +15,7 @@ var mLabelStyle = GoogleFonts.sen(
 var kHintTextStyle = GoogleFonts.sen(
     fontWeight: FontWeight.normal,
     color: PallateColors().textcolor,
-    fontSize: 16);
+    fontSize: 14);
 
 var mBtn = GoogleFonts.sen(
     fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18);

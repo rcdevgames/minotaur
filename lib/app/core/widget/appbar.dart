@@ -29,10 +29,10 @@ class AppBarCustom extends StatelessWidget {
                 TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Canvassing Banten\n',
+                      text: 'SAHABAT SYAFAAT\n',
                       style: TextStyle(
                         color: Color(0xFF59676C),
-                        fontSize: 25,
+                        fontSize: 20,
                         fontFamily: 'Sen',
                         fontWeight: FontWeight.w400,
                       ),
@@ -41,7 +41,7 @@ class AppBarCustom extends StatelessWidget {
                       text: '${homeController.nama.toUpperCase()}',
                       style: TextStyle(
                         color: Color(0xFF59676C),
-                        fontSize: 25,
+                        fontSize: 20,
                         fontFamily: 'Sen',
                         fontWeight: FontWeight.w700,
                       ),
