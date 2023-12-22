@@ -12,7 +12,7 @@ class logo extends StatelessWidget {
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/png/logo.png'),
+          image: AssetImage('assets/png/logo.jpeg'),
           fit: BoxFit.fitHeight,
         ),
       ),

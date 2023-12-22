@@ -1,7 +1,7 @@
 import 'package:hexcolor/hexcolor.dart';
 
 class PallateColors {
-  final primaryColor = HexColor('#CC5353');
+  final primaryColor = HexColor('#FFEB3B');
   final secondaryColor = HexColor('#63636E');
   final bodyColor = HexColor('#FFFFFF');
   // final bodyColor = HexColor('#EEFDFF');

@@ -17,13 +17,9 @@ import '../../../core/widget/form_option.dart';
 import '../../../core/widget/form_option_cb.dart';
 import '../../../core/widget/form_option_kec.dart';
 import '../../../core/widget/form_option_kel.dart';
-import '../../../core/widget/image/image_controller.dart';
 
 class TambahView extends GetView<TambahController> with BaseController {
   TambahView({Key? key}) : super(key: key);
-  final ImageController imageController = Get.put(ImageController());
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -63,21 +59,36 @@ class TambahView extends GetView<TambahController> with BaseController {
                         ],
                       ),
                     ),
-                    // const SizedBox(
-                    //   height: 10,
-                    // ),
-                    // Forms(
-                    //   contrroler: controller.nik,
-                    //   enable: true,
-                    //   hintext: 'Contoh: 747203081098288',
-                    //   label: 'NIK',
-                    //   obscureText: false,
-                    //   suffixText: '',
-                    //   typeKeyboard: TextInputType.number,
-                    //   validator: (value) {
-                    //     return controller.validateForm(value!);
-                    //   },
-                    // ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Forms(
+                      contrroler: controller.nik,
+                      enable: true,
+                      hintext: 'Contoh: 747203081098288',
+                      label: 'NIK',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.number,
+                      validator: (value) {
+                        return controller.validateForm(value!);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Forms(
+                      contrroler: controller.kk,
+                      enable: true,
+                      hintext: 'Contoh: 747203081098288',
+                      label: 'KK',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.number,
+                      validator: (value) {
+                        return controller.validateForm(value!);
+                      },
+                    ),
                     const SizedBox(
                       height: 10,
                     ),
@@ -217,6 +228,78 @@ class TambahView extends GetView<TambahController> with BaseController {
                     const SizedBox(
                       height: 15,
                     ),
+                    Text(
+                      'Anggota Keluarga yang mempunyai hak pilih?',
+                      style: mLabelStyle,
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Forms(
+                      contrroler: controller.keluarga1,
+                      enable: true,
+                      hintext: 'Nama',
+                      label: 'Nama',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.text,
+                      validator: (value) => null,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Forms(
+                      contrroler: controller.keluarga2,
+                      enable: true,
+                      hintext: 'Nama',
+                      label: 'Nama',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.text,
+                      validator: (value) => null,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Forms(
+                      contrroler: controller.keluarga3,
+                      enable: true,
+                      hintext: 'Nama',
+                      label: 'Nama',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.text,
+                      validator: (value) => null,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Forms(
+                      contrroler: controller.keluarga4,
+                      enable: true,
+                      hintext: 'Nama',
+                      label: 'Nama',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.text,
+                      validator: (value) => null,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Forms(
+                      contrroler: controller.keluarga5,
+                      enable: true,
+                      hintext: 'Nama',
+                      label: 'Nama',
+                      obscureText: false,
+                      suffixText: '',
+                      typeKeyboard: TextInputType.text,
+                      validator: (value) => null,
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
                     FormOption(
                       controller: controller.pilihanPartai2019,
                       options: partai2019Items,
@@ -238,7 +321,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Jika tidak memilih PDIP, apakah bisa berubah?',
+                          'Kenal dengan Syafaat Perdana, SE?',
                           style: mLabelStyle,
                         ),
                         RadioGroup<String>.builder(
@@ -272,7 +355,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Pilihan Presiden',
+                          'Bersedia memilih Syafaat Perdana, SE?',
                           style: mLabelStyle,
                         ),
                         RadioGroup<String>.builder(
@@ -344,7 +427,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.camera_alt,
                                               size: 30,
-                                              color: imageController
+                                              color: controller.imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text(
@@ -365,7 +448,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            controller.imageController.fileImage('1');
                                           });
                                         },
                                         child: Column(
@@ -377,7 +460,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.photo_album,
                                               size: 30,
-                                              color: imageController
+                                              color: controller.imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text('Galeri',
@@ -395,7 +478,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                             height: 100,
                             width: MediaQuery.of(context).size.width,
                             child: Obx(
-                              () => imageController.cropImagePath.value == ''
+                              () => controller.imageController.cropImagePath.value == ''
                                   ? Container(
                                       alignment: Alignment.center,
                                       padding: EdgeInsets.all(10),
@@ -425,7 +508,142 @@ class TambahView extends GetView<TambahController> with BaseController {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: Image.file(
-                                        File(imageController
+                                        File(controller.imageController
+                                            .cropImagePath.value),
+                                        width: double.infinity,
+                                        height: 300,
+                                      ),
+                                    ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: (() {
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: Text(
+                                  "Pilih foto",
+                                  style: mLabelStyle,
+                                ),
+                                actions: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          Get.back();
+                                          // showLoading('loading Progres');
+                                          Future.delayed(
+                                              const Duration(microseconds: 100),
+                                              () {
+                                            hideLoading();
+                                            Get.toNamed(Routes.CAMERA,
+                                                parameters: {"image": "1"});
+                                          });
+                                        },
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.camera_alt,
+                                              size: 30,
+                                              color: controller.imageController2
+                                                  .pallateColors.primaryColor,
+                                            ),
+                                            Text(
+                                              'Camera',
+                                              style: kHintTextStyle,
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Get.back();
+
+                                          Future.delayed(
+                                              const Duration(microseconds: 100),
+                                              () {
+                                            hideLoading();
+                                            controller.imageController2.fileImage('1');
+                                          });
+                                        },
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.photo_album,
+                                              size: 30,
+                                              color: controller.imageController2
+                                                  .pallateColors.primaryColor,
+                                            ),
+                                            Text('Galeri',
+                                                style: kHintTextStyle)
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                          child: SizedBox(
+                            height: 100,
+                            width: MediaQuery.of(context).size.width,
+                            child: Obx(
+                              () => controller.imageController2.cropImagePath.value == ''
+                                  ? Container(
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color:
+                                                PallateColors().primaryColor),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Text(
+                                        // 'Kirim Foto\r\n * tidak wajib',
+                                        'Kirim Foto',
+                                        style: kHintTextStyle,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )
+                                  : Container(
+                                      height: 100,
+                                      width: MediaQuery.of(context).size.width,
+                                      margin: const EdgeInsets.only(
+                                          top: 10, bottom: 10),
+                                      padding: const EdgeInsets.only(
+                                          top: 10, bottom: 10),
+                                      decoration: BoxDecoration(
+                                          color: controller
+                                              .pallateColors.bgNavBarColor,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: Image.file(
+                                        File(controller.imageController2
                                             .cropImagePath.value),
                                         width: double.infinity,
                                         height: 300,

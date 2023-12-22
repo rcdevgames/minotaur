@@ -137,6 +137,7 @@ class UploadProvider extends GetConnect with BaseController {
   Future<List<UploadModel>?> insertPendukung({
     String? relawan_id,
     String? kelurahan_id,
+    String? kk,
     String? nik,
     String? nama,
     String? hp,
@@ -151,7 +152,13 @@ class UploadProvider extends GetConnect with BaseController {
     String? pilihanPartai,
     String? pilihan,
     String? pilihanCapres,
+    String? keluarga1,
+    String? keluarga2,
+    String? keluarga3,
+    String? keluarga4,
+    String? keluarga5,
     String? img64,
+    String? img64_2,
     String? gps,
   }) async {
     final directory = await getApplicationDocumentsDirectory();
@@ -161,6 +168,7 @@ class UploadProvider extends GetConnect with BaseController {
     var box = await Hive.openBox('pendukungBox');
     box.put(nik, {
       'nama': nama,
+      'kk': kk,
       'nik': nik,
       'hp': hp,
       'umur': umur,
@@ -174,8 +182,14 @@ class UploadProvider extends GetConnect with BaseController {
       'pilihanPartai': pilihanPartai,
       'pilihan': pilihan,
       'pilihanCapres': pilihanCapres,
+      'keluarga1': keluarga1,
+      'keluarga2': keluarga2,
+      'keluarga3': keluarga3,
+      'keluarga4': keluarga4,
+      'keluarga5': keluarga5,
       'gps': gps,
-      'img64': img64
+      'img64': img64,
+      'img64_2': img64_2
     });
 
     var pend = box.get(nik);
@@ -211,6 +225,7 @@ class UploadProvider extends GetConnect with BaseController {
     // String? pilihan,
     // String? pilihanCapres,
     String? img64,
+    String? img64_2,
     // String? gps,
   }) async {
     final directory = await getApplicationDocumentsDirectory();
@@ -234,7 +249,8 @@ class UploadProvider extends GetConnect with BaseController {
       // 'pilihan': pilihan,
       // 'pilihanCapres': pilihanCapres,
       // 'gps': gps,
-      'img64': img64
+      'img64': img64,
+      'img64_2': img64,
     });
 
     var pend = box.get(nik);

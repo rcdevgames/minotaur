@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.polmantic.canvassing_jatim2">
+    package="com.swd.syafaat">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Canvassing Jatim 2"
+        android:label="SAHABAT SYAFAAT"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

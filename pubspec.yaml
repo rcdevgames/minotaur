@@ -1,5 +1,5 @@
 name: temres_apps
-version: 1.0.12+12
+version: 1.2.0+3
 publish_to: none
 description: Temres 2024.
 environment:
@@ -40,11 +40,11 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
-  image_path: "assets/png/logo.png"
+  image_path: "assets/png/logo.jpeg"
   color: "#fff"
   background_color: "#fff"
   adaptive_icon_background: "#fff"
-  adaptive_icon_foreground: "assets/png/logo.png"
+  adaptive_icon_foreground: "assets/png/logo.jpeg"
   android:
     generate: true
     color: "#fff"

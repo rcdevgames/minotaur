@@ -12,33 +12,28 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: const Center(
-          child: SizedBox(
-            height: 40,
-            width: 40,
-            child: CircularProgressIndicator(
-                color: Color.fromARGB(214, 170, 16, 16)),
-          ),
-        )
-        // Center(
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     children: [
-        //       logo(
-        //         size: 150,
-        //       ),
-        //       const SizedBox(
-        //         height: 10,
-        //       ),
-        //       Text(
-        //         'TEMRES APPS',
-        //         style: mBrandStyle,
-        //       ),
-        //     ],
-        //   ),
-        // ),
-        );
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            logo(
+              size: 200,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const SizedBox(
+              height: 40,
+              width: 40,
+              child: CircularProgressIndicator(
+                color: Colors.yellow,
+              ),
+            )
+          ],
+        ),
+      )
+    );
   }
 }

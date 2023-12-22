@@ -37,6 +37,7 @@ class TambahKeluargaController extends GetxController with BaseController {
   final keluarga = ['Bersedia', 'Ragu-ragu', 'Tidak Bersedia'];
 
   late TextEditingController tps,
+      kk,
       nik,
       nama,
       jk,
@@ -75,6 +76,7 @@ class TambahKeluargaController extends GetxController with BaseController {
     print(dataArgumen[2]);
     getLoc();
     getLatlong();
+    kk = TextEditingController();
     nik = TextEditingController();
     nama = TextEditingController(text: (dataArgumen[1]));
     jk = TextEditingController();
@@ -102,6 +104,7 @@ class TambahKeluargaController extends GetxController with BaseController {
       'dpt_id': (dataArgumen[0] == null) ? dptId.value : dataArgumen[0],
       'kelurahan_id': '${dataArgumen[2]}',
       'tps': tps.text,
+      'kk': kk.text,
       'nik': nik.text,
       'nama': nama.text,
       'jk': jk.text,
@@ -132,7 +135,7 @@ class TambahKeluargaController extends GetxController with BaseController {
   //         clearForm();
   //       } else {
   //         dialogError(
-  //             color: Colors.red,
+  //             color: Colors.yellow,
   //             content: const Text('gagal simpan data.'),
   //             title: 'Failed');
   //         hideLoading();
@@ -159,6 +162,7 @@ class TambahKeluargaController extends GetxController with BaseController {
   }
 
   void clearForm() {
+    kk.text = '';
     nik.text = '';
     nama.text = '';
     jk.text = '';

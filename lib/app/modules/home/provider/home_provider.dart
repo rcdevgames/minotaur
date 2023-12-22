@@ -11,11 +11,9 @@ class HomeProvider extends GetConnect {
   final ApiProvider apiProvider = ApiProvider();
   static var client = http.Client();
   fetchCount(String user_id) async {
-    var baseUrl = Uri.parse(
-        '${apiProvider.baseUrl}/api/count_pendukung.php?relawan_id=$user_id');
-    var response =
-        await client.get(baseUrl, headers: {'Accept': 'application/json'});
-
+    var baseUrl = Uri.parse('${apiProvider.baseUrl}/api/count_pendukung.php?relawan_id=$user_id');
+    var response =await client.get(baseUrl, headers: {'Accept': 'application/json'});
+    print(response.body);
     var jsonResponse = json.decode(response.body);
     var dataTojson = JumlahModel.fromJson(jsonResponse);
 

@@ -22,23 +22,24 @@ class TambahController extends GetxController with BaseController {
   final PendukungProvider pendukungProvider = PendukungProvider();
   final HomeController homeController = Get.put(HomeController());
   final PallateColors pallateColors = PallateColors();
-  final ImageController imageController = Get.find();
+  final ImageController imageController = new ImageController();
+  final ImageController imageController2 = new ImageController();
 
   final GlobalKey<FormState> pendukungFormKey = GlobalKey<FormState>();
 
   final pilihanList = [
-    'Tetap memilih Partai diluar PDIP',
-    'Bisa berubah memilih PDIP'
+    'Kenal',
+    'Tidak Kenal'
   ];
   final capresList = [
-    'Prabowo - Gibran',
-    'Anies - Muhaimin',
-    'Ganjar - Mahfud MD'
+    'Bersedia',
+    'Tidak Bersedia'
   ];
 
   var id_pendukung = '';
 
   late TextEditingController nik,
+      kk,
       nama,
       hp,
       umur,
@@ -49,6 +50,11 @@ class TambahController extends GetxController with BaseController {
       alamat,
       rw,
       rt,
+      keluarga1,
+      keluarga2,
+      keluarga3,
+      keluarga4,
+      keluarga5,
       pilihanPartai2019,
       pilihanPartai;
 
@@ -78,6 +84,7 @@ class TambahController extends GetxController with BaseController {
     getLoc();
     getLatlong();
     nik = TextEditingController();
+    kk = TextEditingController();
     nama = TextEditingController(text: (dataArgumen[1]));
     jk = TextEditingController();
     umur = TextEditingController();
@@ -87,6 +94,11 @@ class TambahController extends GetxController with BaseController {
     alamat = TextEditingController();
     pilihanPartai2019 = TextEditingController();
     pilihanPartai = TextEditingController();
+    keluarga1 = TextEditingController();
+    keluarga2 = TextEditingController();
+    keluarga3 = TextEditingController();
+    keluarga4 = TextEditingController();
+    keluarga5 = TextEditingController();
     rw = TextEditingController(text: dataArgumen[3]);
     rt = TextEditingController(text: dataArgumen[4]);
     hp = TextEditingController(text: '0');
@@ -141,6 +153,7 @@ class TambahController extends GetxController with BaseController {
       'relawan_id': homeController.relawanId.value,
       'kelurahan_id': '${dataArgumen[2]}',
       'nik': nik.text,
+      'kk': kk.text,
       'nama': nama.text,
       'hp': hp.text,
       'umur': umur.text,
@@ -154,6 +167,11 @@ class TambahController extends GetxController with BaseController {
       'pilihanPartai': pilihanPartai.text,
       'pilihan': jpilihanValue.value,
       'pilihanCapres': jpilihanCapresValue.value,
+      'keluarga1': keluarga1.text,
+      'keluarga2': keluarga2.text,
+      'keluarga3': keluarga3.text,
+      'keluarga4': keluarga4.text,
+      'keluarga5': keluarga5.text,
       'gps': '${lat.value}, ${long.value}'
     };
   }
@@ -174,7 +192,7 @@ class TambahController extends GetxController with BaseController {
   addPendukungUploadCheck(BuildContext context){
     if(jpilihanValue.value.isEmpty){
       final snackBar = SnackBar(
-        content: const Text('Pilihan PDIP atau tidak harap dipilih!', style: TextStyle(color: Colors.red)),
+        content: const Text('Pilihan Golkar atau tidak harap dipilih!', style: TextStyle(color: Colors.yellow)),
         backgroundColor: Colors.white,
         action: SnackBarAction(
           label: 'Ok',
@@ -188,7 +206,7 @@ class TambahController extends GetxController with BaseController {
 
     }else if(jpilihanCapresValue.value.isEmpty){
       final snackBar = SnackBar(
-        content: const Text('Pilihan Presiden harap dipilih!', style: TextStyle(color: Colors.red)),
+        content: const Text('Pilihan Presiden harap dipilih!', style: TextStyle(color: Colors.yellow)),
         backgroundColor: Colors.white,
         action: SnackBarAction(
           label: 'Ok',
@@ -206,10 +224,11 @@ class TambahController extends GetxController with BaseController {
   }
 
   addPendukungUpload() async {
-    final bytes =
-        io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes = io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes2 = io.File(imageController2.cropImagePath.value).readAsBytesSync();
 
     String img64 = "data:image/jog;base64,"+base64Encode(bytes);
+    String img64_2 = "data:image/jog;base64,"+base64Encode(bytes2);
 
     // print(img64);
     print(img64.length);
@@ -221,6 +240,7 @@ class TambahController extends GetxController with BaseController {
       UploadProvider().insertPendukung(
           relawan_id: homeController.relawanId.value,
           kelurahan_id: '${dataArgumen[2]}',
+          kk: kk.text,
           nik: nik.text,
           nama: nama.text,
           hp: hp.text,
@@ -235,7 +255,13 @@ class TambahController extends GetxController with BaseController {
           pilihanPartai: pilihanPartai.text,
           pilihan: jpilihanValue.value,
           pilihanCapres: jpilihanCapresValue.value,
+          keluarga1: keluarga1.text,
+          keluarga2: keluarga2.text,
+          keluarga3: keluarga3.text,
+          keluarga4: keluarga4.text,
+          keluarga5: keluarga5.text,
           img64: img64,
+          img64_2: img64_2,
           gps: '${lat.value}, ${long.value}');
     }
   }
@@ -248,7 +274,7 @@ class TambahController extends GetxController with BaseController {
 
       if(jpilihanValue.value.isEmpty){
         final snackBar = SnackBar(
-          content: const Text('Pilihan PDIP atau tidak harap dipilih!', style: TextStyle(color: Colors.red)),
+          content: const Text('Pilihan Golkar atau tidak harap dipilih!', style: TextStyle(color: Colors.yellow)),
           backgroundColor: Colors.white,
           action: SnackBarAction(
             label: 'Ok',
@@ -262,7 +288,7 @@ class TambahController extends GetxController with BaseController {
 
       }else if(jpilihanCapresValue.value.isEmpty){
         final snackBar = SnackBar(
-          content: const Text('Pilihan Presiden harap dipilih!', style: TextStyle(color: Colors.red)),
+          content: const Text('Pilihan Presiden harap dipilih!', style: TextStyle(color: Colors.yellow)),
           backgroundColor: Colors.white,
           action: SnackBarAction(
             label: 'Ok',
@@ -291,10 +317,11 @@ class TambahController extends GetxController with BaseController {
   }
 
   editPendukungUpload() async {
-    final bytes =
-    io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes = io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes2 = io.File(imageController2.cropImagePath.value).readAsBytesSync();
 
-    String img64 = "data:image/jog;base64,"+base64Encode(bytes);
+    String img64 = "data:image/jpg;base64,"+base64Encode(bytes);
+    String img64_2 = "data:image/jpg;base64,"+base64Encode(bytes2);
 
     // print(img64);
     print(img64.length);
@@ -322,6 +349,7 @@ class TambahController extends GetxController with BaseController {
           // pilihan: jpilihanValue.value,
           // pilihanCapres: jpilihanCapresValue.value,
           img64: img64,
+          img64_2: img64_2,
           // gps: '${lat.value}, ${long.value}'
       );
     }

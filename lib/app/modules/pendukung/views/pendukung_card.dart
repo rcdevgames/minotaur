@@ -17,7 +17,7 @@ class PendukungcardView extends GetView {
       decoration: BoxDecoration(
           border: Border.all(color: PallateColors().primaryColor),
           borderRadius: BorderRadius.circular(10)),
-      height: 100,
+      // height: 100,
       margin: EdgeInsets.only(top: 5, bottom: 5),
       child: InkWell(
         onTap: (){
@@ -43,7 +43,7 @@ class PendukungcardView extends GetView {
                 height: 30,
                 width: 30,
                 child: Image.asset(
-                  'assets/png/logo.png',
+                  'assets/png/logo.jpeg',
                   scale: 1,
                 ),
               )),
