@@ -19,8 +19,12 @@ class UploadProvider extends GetConnect with BaseController {
   final ApiProvider apiProvider = ApiProvider();
   static var client = http.Client();
   Future<Iterable<dynamic>> getPendukung() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox('pendukungBox');
     final alls = await box.values;
     print(alls);
@@ -28,8 +32,12 @@ class UploadProvider extends GetConnect with BaseController {
   }
 
   upload(String nik) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox('pendukungBox');
     final pend = await box.get(nik);
     // print(pend);
@@ -69,8 +77,12 @@ class UploadProvider extends GetConnect with BaseController {
 
   Future<bool> addPendukung({required Map<String, String> body}) async {
 
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox('pendukungBox');
 
     var baseUrl = Uri.parse('${apiProvider.baseUrl}/api/input-with-image-kirim.php');
@@ -154,8 +166,12 @@ class UploadProvider extends GetConnect with BaseController {
     String? img64,
     String? gps,
   }) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     print(relawan_id);
     print(nik);
     var box = await Hive.openBox('pendukungBox');
@@ -213,8 +229,12 @@ class UploadProvider extends GetConnect with BaseController {
     String? img64,
     // String? gps,
   }) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     print(relawan_id);
     print(nik);
     var box = await Hive.openBox('pendukungBox');

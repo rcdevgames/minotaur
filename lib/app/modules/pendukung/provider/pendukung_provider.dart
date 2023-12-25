@@ -175,8 +175,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKabupaten() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kabupaten');
     box.put('1', {'nama': 'SIDOARJO', 'id': '1'});
     box.put('2', {'nama': 'KAB PASURUAN', 'id': '2'});
@@ -199,8 +203,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKecamatan() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kecamatan');
     box.put('1', {'nama': 'BUDURAN', 'id': '1', 'kabkota': 'SIDOARJO'});
     box.put('2', {'nama': 'JABON', 'id': '2', 'kabkota': 'SIDOARJO'});
@@ -236,37 +244,37 @@ class PendukungProvider extends GetConnect {
     box.put('28', {'nama': 'WONOASIH', 'id': '28', 'kabkota': 'KOTA PROBOLINGGO'});
     box.put('29', {'nama': 'KANIGARAN', 'id': '29', 'kabkota': 'KOTA PROBOLINGGO'});
 
-    box.put('30', {'nama': 'SUKODONO', 'id': '30', 'kabkota': 'LUMAJANG'});
-    box.put('31', {'nama': 'TEMPURSARI', 'id': '31', 'kabkota': 'LUMAJANG'});
-    box.put('32', {'nama': 'PRONOJIWO', 'id': '32', 'kabkota': 'LUMAJANG'});
-    box.put('33', {'nama': 'SENDURO', 'id': '33', 'kabkota': 'LUMAJANG'});
-    box.put('34', {'nama': 'GUCIALIT', 'id': '34', 'kabkota': 'LUMAJANG'});
-    box.put('35', {'nama': 'PADANG', 'id': '35', 'kabkota': 'LUMAJANG'});
-    box.put('36', {'nama': 'KEDUNG JAJANG', 'id': '36', 'kabkota': 'LUMAJANG'});
-    box.put('37', {'nama': 'KLAKAH', 'id': '37', 'kabkota': 'LUMAJANG'});
-    box.put('38', {'nama': 'RANDU AGUNG', 'id': '38', 'kabkota': 'LUMAJANG'});
-    box.put('39', {'nama': 'JATIROTO', 'id': '39', 'kabkota': 'LUMAJANG'});
-    box.put('40', {'nama': 'RANUYOSO', 'id': '40', 'kabkota': 'LUMAJANG'});
-    box.put('41', {'nama': 'ROWO KANGKUNG', 'id': '41', 'kabkota': 'LUMAJANG'});
+    box.put('30', {'nama': 'SUKODONO', 'id': '30', 'kabkota': 'KAB LUMAJANG'});
+    box.put('31', {'nama': 'TEMPURSARI', 'id': '31', 'kabkota': 'KAB LUMAJANG'});
+    box.put('32', {'nama': 'PRONOJIWO', 'id': '32', 'kabkota': 'KAB LUMAJANG'});
+    box.put('33', {'nama': 'SENDURO', 'id': '33', 'kabkota': 'KAB LUMAJANG'});
+    box.put('34', {'nama': 'GUCIALIT', 'id': '34', 'kabkota': 'KAB LUMAJANG'});
+    box.put('35', {'nama': 'PADANG', 'id': '35', 'kabkota': 'KAB LUMAJANG'});
+    box.put('36', {'nama': 'KEDUNG JAJANG', 'id': '36', 'kabkota': 'KAB LUMAJANG'});
+    box.put('37', {'nama': 'KLAKAH', 'id': '37', 'kabkota': 'KAB LUMAJANG'});
+    box.put('38', {'nama': 'RANDU AGUNG', 'id': '38', 'kabkota': 'KAB LUMAJANG'});
+    box.put('39', {'nama': 'JATIROTO', 'id': '39', 'kabkota': 'KAB LUMAJANG'});
+    box.put('40', {'nama': 'RANUYOSO', 'id': '40', 'kabkota': 'KAB LUMAJANG'});
+    box.put('41', {'nama': 'ROWO KANGKUNG', 'id': '41', 'kabkota': 'KAB LUMAJANG'});
 
-    box.put('42', {'nama': 'JEMBER', 'id': '42', 'kabkota': 'JEMBER'});
-    box.put('43', {'nama': 'PANTI', 'id': '43', 'kabkota': 'JEMBER'});
-    box.put('44', {'nama': 'PAKUSARI', 'id': '44', 'kabkota': 'JEMBER'});
-    box.put('45', {'nama': 'SUKORAMBI', 'id': '45', 'kabkota': 'JEMBER'});
-    box.put('46', {'nama': 'PATRANG', 'id': '46', 'kabkota': 'JEMBER'});
-    box.put('47', {'nama': 'ARJASA', 'id': '47', 'kabkota': 'JEMBER'});
-    box.put('48', {'nama': 'JELBUK', 'id': '48', 'kabkota': 'JEMBER'});
-    box.put('49', {'nama': 'KALISAT', 'id': '49', 'kabkota': 'JEMBER'});
-    box.put('50', {'nama': 'SUKOWONO', 'id': '50', 'kabkota': 'JEMBER'});
-    box.put('51', {'nama': 'SUMBERJAMBE', 'id': '51', 'kabkota': 'JEMBER'});
-    box.put('52', {'nama': 'MUMBULSARI', 'id': '52', 'kabkota': 'JEMBER'});
-    box.put('53', {'nama': 'MAYANG', 'id': '53', 'kabkota': 'JEMBER'});
-    box.put('54', {'nama': 'SILO', 'id': '54', 'kabkota': 'JEMBER'});
-    box.put('55', {'nama': 'WULUHAN', 'id': '55', 'kabkota': 'JEMBER'});
-    box.put('56', {'nama': 'AMBULU', 'id': '56', 'kabkota': 'JEMBER'});
-    box.put('57', {'nama': 'KENCONG', 'id': '57', 'kabkota': 'JEMBER'});
-    box.put('58', {'nama': 'SUMBERBARU', 'id': '58', 'kabkota': 'JEMBER'});
-    box.put('59', {'nama': 'SEMBORO', 'id': '59', 'kabkota': 'JEMBER'});
+    box.put('42', {'nama': 'JEMBER', 'id': '42', 'kabkota': 'KAB JEMBER'});
+    box.put('43', {'nama': 'PANTI', 'id': '43', 'kabkota': 'KAB JEMBER'});
+    box.put('44', {'nama': 'PAKUSARI', 'id': '44', 'kabkota': 'KAB JEMBER'});
+    box.put('45', {'nama': 'SUKORAMBI', 'id': '45', 'kabkota': 'KAB JEMBER'});
+    box.put('46', {'nama': 'PATRANG', 'id': '46', 'kabkota': 'KAB JEMBER'});
+    box.put('47', {'nama': 'ARJASA', 'id': '47', 'kabkota': 'KAB JEMBER'});
+    box.put('48', {'nama': 'JELBUK', 'id': '48', 'kabkota': 'KAB JEMBER'});
+    box.put('49', {'nama': 'KALISAT', 'id': '49', 'kabkota': 'KAB JEMBER'});
+    box.put('50', {'nama': 'SUKOWONO', 'id': '50', 'kabkota': 'KAB JEMBER'});
+    box.put('51', {'nama': 'SUMBERJAMBE', 'id': '51', 'kabkota': 'KAB JEMBER'});
+    box.put('52', {'nama': 'MUMBULSARI', 'id': '52', 'kabkota': 'KAB JEMBER'});
+    box.put('53', {'nama': 'MAYANG', 'id': '53', 'kabkota': 'KAB JEMBER'});
+    box.put('54', {'nama': 'SILO', 'id': '54', 'kabkota': 'KAB JEMBER'});
+    box.put('55', {'nama': 'WULUHAN', 'id': '55', 'kabkota': 'KAB JEMBER'});
+    box.put('56', {'nama': 'AMBULU', 'id': '56', 'kabkota': 'KAB JEMBER'});
+    box.put('57', {'nama': 'KENCONG', 'id': '57', 'kabkota': 'KAB JEMBER'});
+    box.put('58', {'nama': 'SUMBERBARU', 'id': '58', 'kabkota': 'KAB JEMBER'});
+    box.put('59', {'nama': 'SEMBORO', 'id': '59', 'kabkota': 'KAB JEMBER'});
 
     box.put('60', {'nama': 'PAGELARAN', 'id': '60', 'kabkota': 'KAB MALANG'});
     box.put('61', {'nama': 'GONDANGLEGI', 'id': '61', 'kabkota': 'KAB MALANG'});
@@ -314,53 +322,57 @@ class PendukungProvider extends GetConnect {
     box.put('98', {'nama': 'KARTOHARJO', 'id': '98', 'kabkota': 'KOTA MADIUN'});
     box.put('99', {'nama': 'MANGUHARJO', 'id': '99', 'kabkota': 'KOTA MADIUN'});
 
-    box.put('100', {'nama': 'KEREK', 'id': '100', 'kabkota': 'TUBAN'});
-    box.put('101', {'nama': 'MONTONG', 'id': '101', 'kabkota': 'TUBAN'});
-    box.put('102', {'nama': 'PLUMPANG', 'id': '102', 'kabkota': 'TUBAN'});
-    box.put('103', {'nama': 'WIDANG', 'id': '103', 'kabkota': 'TUBAN'});
-    box.put('104', {'nama': 'RENGEL', 'id': '104', 'kabkota': 'TUBAN'});
-    box.put('105', {'nama': 'BANCAR', 'id': '105', 'kabkota': 'TUBAN'});
-    box.put('106', {'nama': 'JENU', 'id': '106', 'kabkota': 'TUBAN'});
-    box.put('107', {'nama': 'TAMBAKBOYO', 'id': '107', 'kabkota': 'TUBAN'});
+    box.put('100', {'nama': 'KEREK', 'id': '100', 'kabkota': 'KAB TUBAN'});
+    box.put('101', {'nama': 'MONTONG', 'id': '101', 'kabkota': 'KAB TUBAN'});
+    box.put('102', {'nama': 'PLUMPANG', 'id': '102', 'kabkota': 'KAB TUBAN'});
+    box.put('103', {'nama': 'WIDANG', 'id': '103', 'kabkota': 'KAB TUBAN'});
+    box.put('104', {'nama': 'RENGEL', 'id': '104', 'kabkota': 'KAB TUBAN'});
+    box.put('105', {'nama': 'BANCAR', 'id': '105', 'kabkota': 'KAB TUBAN'});
+    box.put('106', {'nama': 'JENU', 'id': '106', 'kabkota': 'KAB TUBAN'});
+    box.put('107', {'nama': 'TAMBAKBOYO', 'id': '107', 'kabkota': 'KAB TUBAN'});
 
-    box.put('108', {'nama': 'KADEWAN', 'id': '108', 'kabkota': 'BOJONEGORO'});
-    box.put('109', {'nama': 'KASIMAN', 'id': '109', 'kabkota': 'BOJONEGORO'});
-    box.put('110', {'nama': 'SUKOSEWU', 'id': '110', 'kabkota': 'BOJONEGORO'});
-    box.put('111', {'nama': 'KANOR', 'id': '111', 'kabkota': 'BOJONEGORO'});
-    box.put('112', {'nama': 'BAURENO', 'id': '112', 'kabkota': 'BOJONEGORO'});
-    box.put('113', {'nama': 'SUGIHWARAS', 'id': '113', 'kabkota': 'BOJONEGORO'});
-    box.put('114', {'nama': 'TEMAYANG', 'id': '114', 'kabkota': 'BOJONEGORO'});
-    box.put('115', {'nama': 'BUBULAN', 'id': '115', 'kabkota': 'BOJONEGORO'});
-    box.put('116', {'nama': 'NGAMBON', 'id': '116', 'kabkota': 'BOJONEGORO'});
-    box.put('117', {'nama': 'TAMBAKREJO', 'id': '117', 'kabkota': 'BOJONEGORO'});
-    box.put('118', {'nama': 'MARGOMULYO', 'id': '118', 'kabkota': 'BOJONEGORO'});
-    box.put('119', {'nama': 'NGRAHO', 'id': '119', 'kabkota': 'BOJONEGORO'});
-    box.put('120', {'nama': 'PURWOSARI', 'id': '120', 'kabkota': 'BOJONEGORO'});
-    box.put('121', {'nama': 'MALO', 'id': '121', 'kabkota': 'BOJONEGORO'});
+    box.put('108', {'nama': 'KADEWAN', 'id': '108', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('109', {'nama': 'KASIMAN', 'id': '109', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('110', {'nama': 'SUKOSEWU', 'id': '110', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('111', {'nama': 'KANOR', 'id': '111', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('112', {'nama': 'BAURENO', 'id': '112', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('113', {'nama': 'SUGIHWARAS', 'id': '113', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('114', {'nama': 'TEMAYANG', 'id': '114', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('115', {'nama': 'BUBULAN', 'id': '115', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('116', {'nama': 'NGAMBON', 'id': '116', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('117', {'nama': 'TAMBAKREJO', 'id': '117', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('118', {'nama': 'MARGOMULYO', 'id': '118', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('119', {'nama': 'NGRAHO', 'id': '119', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('120', {'nama': 'PURWOSARI', 'id': '120', 'kabkota': 'KAB BOJONEGORO'});
+    box.put('121', {'nama': 'MALO', 'id': '121', 'kabkota': 'KAB BOJONEGORO'});
 
-    box.put('122', {'nama': 'TORJUN', 'id': '122', 'kabkota': 'SAMPANG'});
-    box.put('123', {'nama': 'SRESEH', 'id': '123', 'kabkota': 'SAMPANG'});
-    box.put('124', {'nama': 'JRENGIK', 'id': '124', 'kabkota': 'SAMPANG'});
-    box.put('125', {'nama': 'TAMBELANGAN', 'id': '125', 'kabkota': 'SAMPANG'});
-    box.put('126', {'nama': 'CAMPLONG', 'id': '126', 'kabkota': 'SAMPANG'});
-    box.put('127', {'nama': 'OMBEN', 'id': '127', 'kabkota': 'SAMPANG'});
-    box.put('128', {'nama': 'TLANAKAN', 'id': '128', 'kabkota': 'SAMPANG'});
-    box.put('129', {'nama': 'KEDUNGDUNG', 'id': '129', 'kabkota': 'SAMPANG'});
+    box.put('122', {'nama': 'TORJUN', 'id': '122', 'kabkota': 'KAB SAMPANG'});
+    box.put('123', {'nama': 'SRESEH', 'id': '123', 'kabkota': 'KAB SAMPANG'});
+    box.put('124', {'nama': 'JRENGIK', 'id': '124', 'kabkota': 'KAB SAMPANG'});
+    box.put('125', {'nama': 'TAMBELANGAN', 'id': '125', 'kabkota': 'KAB SAMPANG'});
+    box.put('126', {'nama': 'CAMPLONG', 'id': '126', 'kabkota': 'KAB SAMPANG'});
+    box.put('127', {'nama': 'OMBEN', 'id': '127', 'kabkota': 'KAB SAMPANG'});
+    box.put('128', {'nama': 'TLANAKAN', 'id': '128', 'kabkota': 'KAB SAMPANG'});
+    box.put('129', {'nama': 'KEDUNGDUNG', 'id': '129', 'kabkota': 'KAB SAMPANG'});
 
-    box.put('130', {'nama': 'WARU', 'id': '130', 'kabkota': 'PAMEKASAN'});
-    box.put('131', {'nama': 'BATUMARMAR', 'id': '131', 'kabkota': 'PAMEKASAN'});
-    box.put('132', {'nama': 'PASEAN', 'id': '132', 'kabkota': 'PAMEKASAN'});
-    box.put('133', {'nama': 'PEGANTENAN', 'id': '133', 'kabkota': 'PAMEKASAN'});
-    box.put('134', {'nama': 'KADUR', 'id': '134', 'kabkota': 'PAMEKASAN'});
-    box.put('135', {'nama': 'PALENGAAN', 'id': '135', 'kabkota': 'PAMEKASAN'});
-    box.put('136', {'nama': 'PADEMAWU', 'id': '136', 'kabkota': 'PAMEKASAN'});
-    box.put('137', {'nama': 'GALIS', 'id': '137', 'kabkota': 'PAMEKASAN'});
-    box.put('138', {'nama': 'LARANGAN', 'id': '138', 'kabkota': 'PAMEKASAN'});
+    box.put('130', {'nama': 'WARU', 'id': '130', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('131', {'nama': 'BATUMARMAR', 'id': '131', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('132', {'nama': 'PASEAN', 'id': '132', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('133', {'nama': 'PEGANTENAN', 'id': '133', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('134', {'nama': 'KADUR', 'id': '134', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('135', {'nama': 'PALENGAAN', 'id': '135', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('136', {'nama': 'PADEMAWU', 'id': '136', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('137', {'nama': 'GALIS', 'id': '137', 'kabkota': 'KAB PAMEKASAN'});
+    box.put('138', {'nama': 'LARANGAN', 'id': '138', 'kabkota': 'KAB PAMEKASAN'});
   }
 
   Future<List<KecamatanModel>?> fetchKecamatan(String kabId) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kecamatan');
     final pend = await box.values.toList();
     List<KecamatanModel> kecList = [];
@@ -373,8 +385,12 @@ class PendukungProvider extends GetConnect {
   }
 
   Future<List<KelurahanModel>?> fetchKelurahan(String kecId) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kelurahan');
     final pend = await box.values.toList();
     List<KelurahanModel> kelList = [];
@@ -387,8 +403,12 @@ class PendukungProvider extends GetConnect {
   }
 
   Future<List<KabupatenModel>?> fetchKabupaten() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kabupaten');
     final pend = await box.values.toList();
     List<KabupatenModel> kabList = [];
@@ -452,8 +472,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKelurahan() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kelurahan');
     box.put('1', {'nama': 'PANTI', 'id': '1', 'kecamatan': 'PANTI'});
     box.put('2', {'nama': 'PANTI TIMUR', 'id': '2', 'kecamatan': 'PANTI'});

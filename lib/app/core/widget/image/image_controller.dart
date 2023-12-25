@@ -124,8 +124,12 @@ class ImageController extends GetxController with BaseController {
   cropImage(File file, String srcx) async {
     final img = await compressFile(file: file);
     file = img;
-    Directory dir = await getApplicationDocumentsDirectory();
-    String pathName = p.join(dir.path, file.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    String pathName = p.join(dir!, file.path);
 
     final cropImageFile = await ImageCropper().cropImage(
         sourcePath: pathName,
