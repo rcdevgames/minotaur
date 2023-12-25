@@ -23,6 +23,8 @@ class CameraScreen extends StatelessWidget with BaseController {
           FutureBuilder<void>(
             future: imageController.initializeControllerFuture,
             builder: (context, snapshot) {
+              print(snapshot.connectionState.toString());
+              print(snapshot.stackTrace.toString());
               if (snapshot.connectionState == ConnectionState.done) {
                 // If the Future is complete, display the preview.
                 return SizedBox(

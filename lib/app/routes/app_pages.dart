@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:temres_apps/app/modules/pendukung/views/edit_view.dart';
 
 import '../core/widget/image/camera_screen.dart';
+import '../core/widget/image/camera_screen_2.dart';
 import '../core/widget/image/image_binding.dart';
 import '../modules/auth/bindings/auth_binding.dart';
 import '../modules/auth/views/auth_view.dart';
@@ -74,6 +75,11 @@ class AppPages {
     GetPage(
       name: _Paths.CAMERA,
       page: () => CameraScreen(),
+      binding: ImageBinding(),
+    ),
+    GetPage(
+      name: _Paths.CAMERA2,
+      page: () => CameraScreen2(),
       binding: ImageBinding(),
     ),
   ];

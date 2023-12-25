@@ -402,7 +402,7 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                         borderRadius: BorderRadius.circular(10),
                                       ),
                                       child: Text(
-                                        'Upload foto KTP',
+                                        'Upload foto KK',
                                         style: kHintTextStyle,
                                         textAlign: TextAlign.center,
                                       ),

@@ -13,6 +13,7 @@ abstract class Routes {
   static const TAMBAHPENDUKUNGKELUARGA = _Paths.TAMBAHPENDUKUNGKELUARGA;
   static const DPT = _Paths.DPT;
   static const CAMERA = _Paths.CAMERA;
+  static const CAMERA2 = _Paths.CAMERA2;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const TAMBAHPENDUKUNGKELUARGA = '/tambahpendukungkeluarga';
   static const DPT = '/dpt';
   static const CAMERA = '/camera';
+  static const CAMERA2 = '/camera2';
 }

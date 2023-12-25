@@ -8,6 +8,7 @@ import 'package:temres_apps/app/core/constant/color.dart';
 import 'package:temres_apps/app/core/constant/text_styles.dart';
 import 'package:temres_apps/app/core/helper/base_controller.dart';
 import 'package:temres_apps/app/core/widget/button_fill.dart';
+import 'package:temres_apps/app/core/widget/image/image_controller.dart';
 import 'package:temres_apps/app/modules/pendukung/controllers/tambah_controller.dart';
 import 'package:temres_apps/app/routes/app_pages.dart';
 
@@ -20,6 +21,7 @@ import '../../../core/widget/form_option_kel.dart';
 
 class TambahView extends GetView<TambahController> with BaseController {
   TambahView({Key? key}) : super(key: key);
+  final ImageController imageController = Get.put(ImageController());
 
   @override
   Widget build(BuildContext context) {
@@ -398,7 +400,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.camera_alt,
                                               size: 30,
-                                              color: controller.imageController
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text(
@@ -419,7 +421,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            controller.imageController.fileImage('1');
+                                            imageController.fileImage('1');
                                           });
                                         },
                                         child: Column(
@@ -431,7 +433,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.photo_album,
                                               size: 30,
-                                              color: controller.imageController
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text('Galeri',
@@ -449,7 +451,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                             height: 100,
                             width: MediaQuery.of(context).size.width,
                             child: Obx(
-                              () => controller.imageController.cropImagePath.value == ''
+                              () => imageController.cropImagePath.value == ''
                                   ? Container(
                                       alignment: Alignment.center,
                                       padding: EdgeInsets.all(10),
@@ -479,7 +481,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: Image.file(
-                                        File(controller.imageController
+                                        File(imageController
                                             .cropImagePath.value),
                                         width: double.infinity,
                                         height: 300,
@@ -521,7 +523,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               () {
                                             hideLoading();
                                             Get.toNamed(Routes.CAMERA,
-                                                parameters: {"image": "1"});
+                                                parameters: {"image": "2"});
                                           });
                                         },
                                         child: Column(
@@ -533,7 +535,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.camera_alt,
                                               size: 30,
-                                              color: controller.imageController2
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text(
@@ -554,7 +556,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            controller.imageController2.fileImage('1');
+                                            imageController.fileImage('1');
                                           });
                                         },
                                         child: Column(
@@ -566,7 +568,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.photo_album,
                                               size: 30,
-                                              color: controller.imageController2
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text('Galeri',
@@ -584,7 +586,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                             height: 100,
                             width: MediaQuery.of(context).size.width,
                             child: Obx(
-                              () => controller.imageController2.cropImagePath.value == ''
+                              () => imageController.cropImagePath.value == ''
                                   ? Container(
                                       alignment: Alignment.center,
                                       padding: EdgeInsets.all(10),
@@ -614,7 +616,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: Image.file(
-                                        File(controller.imageController2
+                                        File(imageController
                                             .cropImagePath.value),
                                         width: double.infinity,
                                         height: 300,
