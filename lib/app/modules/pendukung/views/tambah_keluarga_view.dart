@@ -361,7 +361,7 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
@@ -495,7 +495,7 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('2');
+                                            imageController.fileImage('2', context);
                                           });
                                         },
                                         child: Column(

@@ -51,8 +51,9 @@ class CameraScreen extends StatelessWidget with BaseController {
                         print(Get.parameters['image']);
                         // imageController.cropImage(
                         //     File(file.path), imageController.argumets[0]);
+                        // ignore: use_build_context_synchronously
                         imageController.cropImage(
-                            File(file.path), Get.parameters['image']!);
+                            File(file.path), Get.parameters['image']!, context);
                         hideLoading();
                       } catch (e) {
                         imageController.getSnakbar(

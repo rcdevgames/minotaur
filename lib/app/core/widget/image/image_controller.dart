@@ -54,21 +54,24 @@ class ImageController extends GetxController with BaseController {
 
   Future<File> compressFile({required File? file}) async {
     final filePath = file!.path;
-
-    // Create output file path
-    // eg:- "Volume/VM/abcd_out.jpeg"
-    final lastIndex = filePath.lastIndexOf(RegExp(r'.jp'));
-    final splitted = filePath.substring(0, (lastIndex));
-    final outPath = '${splitted}_out${filePath.substring(lastIndex)}';
-    var result = await FlutterImageCompress.compressAndGetFile(
-      file.path,
-      outPath,
-      quality: 30,
-    );
-    return result!;
+    if (filePath.contains("blob")) {
+      return file;
+    }else {
+      // Create output file path
+      // eg:- "Volume/VM/abcd_out.jpeg"
+      final lastIndex = filePath.lastIndexOf(RegExp(r'.jp'));
+      final splitted = filePath.substring(0, (lastIndex));
+      final outPath = '${splitted}_out${filePath.substring(lastIndex)}';
+      var result = await FlutterImageCompress.compressAndGetFile(
+        file.path,
+        outPath,
+        quality: 30,
+      );
+      return result!;
+    }
   }
 
-  void fileImage(String src) async {
+  void fileImage(String src, BuildContext context) async {
     showLoading('Menyiapkan galeri...');
 
     FilePickerResult? result = await FilePicker.platform.pickFiles();
@@ -82,7 +85,8 @@ class ImageController extends GetxController with BaseController {
       print('>>>>>>>>>>>>>>');
       print(src);
 
-      cropImage(File(img.value), src);
+      // ignore: use_build_context_synchronously
+      cropImage(File(img.value), src, context);
       Get.back();
     } else {
       hideLoading();
@@ -121,21 +125,38 @@ class ImageController extends GetxController with BaseController {
     );
   }
 
-  cropImage(File file, String srcx) async {
+  cropImage(File file, String srcx, BuildContext context) async {
     final img = await compressFile(file: file);
     file = img;
-    String? dir;
+    String dir = "";
     try {
       final directory = await getApplicationDocumentsDirectory();
       dir = directory.path;
     } catch (e) {}
-    String pathName = p.join(dir!, file.path);
+    String pathName = p.join(dir, file.path);
 
     final cropImageFile = await ImageCropper().cropImage(
         sourcePath: pathName,
         // compressQuality: 1,
         aspectRatioPresets: [CropAspectRatioPreset.original],
-        compressFormat: ImageCompressFormat.jpg);
+        compressFormat: ImageCompressFormat.jpg,
+        uiSettings: [
+          // ignore: use_build_context_synchronously
+          WebUiSettings(
+            context: context,
+            presentStyle: CropperPresentStyle.dialog,
+            boundary: const CroppieBoundary(
+              width: 520,
+              height: 520,
+            ),
+            viewPort:
+                const CroppieViewPort(width: 480, height: 480, type: 'circle'),
+            enableExif: true,
+            enableZoom: true,
+            showZoomer: true,
+          ),
+        ],
+        );
 
     if (cropImageFile!.path != "") {
       if (srcx == "1") {

@@ -19,6 +19,8 @@ import '../../../core/widget/form_option_kec.dart';
 import '../../../core/widget/form_option_kel.dart';
 import '../../../core/widget/image/image_controller.dart';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 class TambahView extends GetView<TambahController> with BaseController {
   TambahView({Key? key}) : super(key: key);
   final ImageController imageController = Get.put(ImageController());
@@ -365,7 +367,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
@@ -424,7 +426,11 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               .pallateColors.bgNavBarColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Image.file(
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImagePath.value,
+                                        width: double.infinity,
+                                        height: 300,
+                                      ) : Image.file(
                                         File(imageController
                                             .cropImagePath.value),
                                         width: double.infinity,

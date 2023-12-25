@@ -207,7 +207,7 @@ class EditView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
