@@ -618,7 +618,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                           borderRadius:
                                               BorderRadius.circular(10)),
                                       child: Image.file(
-                                        File(imageController
+                                        File(imageController2
                                             .cropImagePath.value),
                                         width: double.infinity,
                                         height: 300,
