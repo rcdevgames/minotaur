@@ -9,6 +9,7 @@ import 'package:temres_apps/app/core/constant/text_styles.dart';
 import 'package:temres_apps/app/core/helper/base_controller.dart';
 import 'package:temres_apps/app/core/widget/button_fill.dart';
 import 'package:temres_apps/app/core/widget/image/image_controller.dart';
+import 'package:temres_apps/app/core/widget/image2/image_controller.dart';
 import 'package:temres_apps/app/modules/pendukung/controllers/tambah_controller.dart';
 import 'package:temres_apps/app/routes/app_pages.dart';
 
@@ -22,6 +23,7 @@ import '../../../core/widget/form_option_kel.dart';
 class TambahView extends GetView<TambahController> with BaseController {
   TambahView({Key? key}) : super(key: key);
   final ImageController imageController = Get.put(ImageController());
+  final ImageController2 imageController2 = Get.put(ImageController2());
 
   @override
   Widget build(BuildContext context) {
@@ -522,8 +524,8 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            Get.toNamed(Routes.CAMERA,
-                                                parameters: {"image": "2"});
+                                            Get.toNamed(Routes.CAMERA2,
+                                                parameters: {"image": "1"});
                                           });
                                         },
                                         child: Column(
@@ -535,7 +537,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.camera_alt,
                                               size: 30,
-                                              color: imageController
+                                              color: imageController2
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text(
@@ -556,7 +558,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController2.fileImage('1');
                                           });
                                         },
                                         child: Column(
@@ -568,7 +570,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.photo_album,
                                               size: 30,
-                                              color: imageController
+                                              color: imageController2
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text('Galeri',

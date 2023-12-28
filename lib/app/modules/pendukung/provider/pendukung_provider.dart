@@ -175,8 +175,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKabupaten() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kabupaten');
     box.put('1', {'nama': 'KAB. TANGERANG', 'id': '1'});
     box.put('2', {'nama': 'KOTA TANGERANG', 'id': '2'});
@@ -184,8 +188,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKecamatan() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kecamatan');
     box.put('1', {'nama': 'Balaraja', 'id': '1', 'kabkota': 'KAB. TANGERANG'});
     box.put('2', {'nama': 'Jayanti', 'id': '2', 'kabkota': 'KAB. TANGERANG'});
@@ -239,8 +247,12 @@ class PendukungProvider extends GetConnect {
   }
 
   Future<List<KecamatanModel>?> fetchKecamatan(String kabId) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kecamatan');
     final pend = await box.values.toList();
     List<KecamatanModel> kecList = [];
@@ -253,8 +265,12 @@ class PendukungProvider extends GetConnect {
   }
 
   Future<List<KelurahanModel>?> fetchKelurahan(String kecId) async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kelurahan');
     final pend = await box.values.toList();
     List<KelurahanModel> kelList = [];
@@ -267,8 +283,12 @@ class PendukungProvider extends GetConnect {
   }
 
   Future<List<KabupatenModel>?> fetchKabupaten() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kabupaten');
     final pend = await box.values.toList();
     List<KabupatenModel> kabList = [];
@@ -332,8 +352,12 @@ class PendukungProvider extends GetConnect {
   }
 
   void initKelurahan() async {
-    final directory = await getApplicationDocumentsDirectory();
-    Hive.init(directory.path);
+    String? dir;
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      dir = directory.path;
+    } catch (e) {}
+    Hive.init(dir);
     var box = await Hive.openBox<Map>('kelurahan');
     box.put('1', {'nama': 'Balaraja', 'id': '1', 'kecamatan': 'Balaraja'});
     box.put('2', {'nama': 'Cangkudu', 'id': '2', 'kecamatan': 'Balaraja'});

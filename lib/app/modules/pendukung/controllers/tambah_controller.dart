@@ -258,7 +258,7 @@ class TambahController extends GetxController with BaseController {
           keluarga4: keluarga4.text,
           keluarga5: keluarga5.text,
           img64: img64,
-          img64_2: img64_2,
+          img64_2: "",
           gps: '${lat.value}, ${long.value}');
     }
   }
@@ -315,10 +315,8 @@ class TambahController extends GetxController with BaseController {
 
   editPendukungUpload() async {
     final bytes = io.File(imageController.cropImagePath.value).readAsBytesSync();
-    final bytes2 = io.File(imageController2.cropImagePath.value).readAsBytesSync();
 
     String img64 = "data:image/jpg;base64,"+base64Encode(bytes);
-    String img64_2 = "data:image/jpg;base64,"+base64Encode(bytes2);
 
     // print(img64);
     print(img64.length);
@@ -346,7 +344,7 @@ class TambahController extends GetxController with BaseController {
           // pilihan: jpilihanValue.value,
           // pilihanCapres: jpilihanCapresValue.value,
           img64: img64,
-          img64_2: img64_2,
+          img64_2: "",
           // gps: '${lat.value}, ${long.value}'
       );
     }

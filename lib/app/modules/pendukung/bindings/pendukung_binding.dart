@@ -24,5 +24,5 @@ class PendukungBinding extends Bindings {
     Get.lazyPut<ImageController>(
       () => ImageController(),
     );
-  }``
+  }
 }

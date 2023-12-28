@@ -13,7 +13,7 @@ import '../../constant/color.dart';
 import '../../helper/base_controller.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 
-class ImageController extends GetxController with BaseController {
+class ImageController2 extends GetxController with BaseController {
   late List<CameraDescription> camera;
 
   final PallateColors pallateColors = PallateColors();
@@ -54,21 +54,18 @@ class ImageController extends GetxController with BaseController {
 
   Future<File> compressFile({required File? file}) async {
     final filePath = file!.path;
-    if (filePath.contains("blob")) {
-      return file;
-    }else {
-      // Create output file path
-      // eg:- "Volume/VM/abcd_out.jpeg"
-      final lastIndex = filePath.lastIndexOf(RegExp(r'.jp'));
-      final splitted = filePath.substring(0, (lastIndex));
-      final outPath = '${splitted}_out${filePath.substring(lastIndex)}';
-      var result = await FlutterImageCompress.compressAndGetFile(
-        file.path,
-        outPath,
-        quality: 30,
-      );
-      return result!;
-    }
+
+    // Create output file path
+    // eg:- "Volume/VM/abcd_out.jpeg"
+    final lastIndex = filePath.lastIndexOf(RegExp(r'.jp'));
+    final splitted = filePath.substring(0, (lastIndex));
+    final outPath = '${splitted}_out${filePath.substring(lastIndex)}';
+    var result = await FlutterImageCompress.compressAndGetFile(
+      file.path,
+      outPath,
+      quality: 30,
+    );
+    return result!;
   }
 
   void fileImage(String src) async {
