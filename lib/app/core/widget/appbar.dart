@@ -29,7 +29,7 @@ class AppBarCustom extends StatelessWidget {
                 TextSpan(
                   children: [
                     TextSpan(
-                      text: 'Canvassing Jatim\n',
+                      text: 'Sahabat Syafaat\n',
                       style: TextStyle(
                         color: Color(0xFF59676C),
                         fontSize: 25,
@@ -78,7 +78,7 @@ class AppBarCustom extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Color(0xFFD9D9D9),
                             image: DecorationImage(
-                                image: AssetImage('assets/png/logo.png'),
+                                image: AssetImage('assets/png/logo.jpeg'),
                                 fit: BoxFit.fitWidth),
                             shape: OvalBorder(
                               side: BorderSide(

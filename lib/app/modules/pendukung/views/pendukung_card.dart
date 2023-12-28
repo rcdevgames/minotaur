@@ -43,7 +43,7 @@ class PendukungcardView extends GetView {
                 height: 30,
                 width: 30,
                 child: Image.asset(
-                  'assets/png/logo.png',
+                  'assets/png/logo.jpeg',
                   scale: 1,
                 ),
               )),

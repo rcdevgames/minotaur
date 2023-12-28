@@ -244,6 +244,7 @@ class TambahController extends GetxController with BaseController {
     print(dataPendukung());
     // return;
     bool isValidate = pendukungFormKey.currentState!.validate();
+    print(isValidate);
     if (isValidate) {
 
       if(jpilihanValue.value.isEmpty){

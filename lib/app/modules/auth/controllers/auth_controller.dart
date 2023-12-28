@@ -59,7 +59,7 @@ class AuthController extends GetxController with BaseController {
         } else {
           hideLoading();
           Get.defaultDialog(
-            buttonColor: Colors.red,
+            buttonColor: Colors.yellow,
             confirmTextColor: Colors.white,
             title: "Gagal Login",
             content: const Text(
@@ -75,7 +75,7 @@ class AuthController extends GetxController with BaseController {
       }
     } else {
       dialogError(
-          color: Colors.red,
+          color: Colors.yellow,
           content: const Text(
             'Semua data input harus diisi.',
           ),

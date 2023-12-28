@@ -2,7 +2,7 @@
     package="com.swd.jatim2">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Canvassing Jatim 2"
+        android:label="SAHABAT SYAFAAT"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

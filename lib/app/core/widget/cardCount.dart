@@ -17,7 +17,7 @@ class CardCount extends StatelessWidget {
         padding: EdgeInsets.all(16),
         alignment: Alignment.centerLeft,
         decoration: ShapeDecoration(
-          color: Color(0xFFCC5353),
+          color: Color(0xFFffc800),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),

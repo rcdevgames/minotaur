@@ -24,7 +24,7 @@ class PendukungcardView extends GetView {
               height: 30,
               width: 30,
               child: Image.asset(
-                'assets/png/logo.png',
+                'assets/png/logo.jpeg',
                 scale: 1,
               ),
             )),
@@ -65,7 +65,7 @@ class PendukungcardView extends GetView {
             'Kirim',
             style: TextStyle(
               fontSize: 12,
-              color: Colors.red,
+              color: Colors.yellow,
             ),
           ),
         ),
