@@ -73,8 +73,8 @@ class HomeController extends GetxController with BaseController {
     setUser();
     getPendukung();
     getCountPendukung();
-    // getCount();
-    // setCount();
+    getCount();
+    setCount();
     getLoc();
     getLatlong();
     cronJobRUn();
