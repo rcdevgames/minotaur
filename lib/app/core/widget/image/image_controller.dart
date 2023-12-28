@@ -42,7 +42,8 @@ class ImageController extends GetxController with BaseController {
     final cameras = await availableCameras();
     cameraController = CameraController(cameras[0], ResolutionPreset.ultraHigh);
     cameraController.setFlashMode(FlashMode.off);
-    initializeControllerFuture = cameraController.initialize();
+    // initializeControllerFuture = cameraController.initialize();
+    // cameraController.initialize();
 
     super.onInit();
   }

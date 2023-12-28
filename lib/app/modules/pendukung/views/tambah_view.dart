@@ -336,17 +336,13 @@ class TambahView extends GetView<TambahController> with BaseController {
                         RadioGroup<String>.builder(
                           groupValue: controller.jpilihanCapres.value,
                           onChanged: (value) {
-                            controller.jpilihanCapres.value = value!;
-                            if (value == controller.capresList[0]) {
-                              controller.jpilihanCapresValue.value = '1';
-                            } else if (value == controller.capresList[1]) {
-                              controller.jpilihanCapresValue.value = '2';
-                            } else if (value == controller.capresList[2]) {
-                              controller.jpilihanCapresValue.value = '3';
-                            } else {
-                              controller.jpilihanCapresValue.value = '3';
-                            }
+                            controller.jpilihanCapresValue.value = value!;
 
+                            (value == controller.capresList[0])
+                                ? controller.jpilihanCapresValue.value = '1'
+                                : (value == controller.capresList[1])
+                                    ? controller.jpilihanCapresValue.value = '2'
+                                    : "0";
                             print(controller.jpilihanCapresValue.value);
                           },
                           items: controller.capresList,

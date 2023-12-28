@@ -21,7 +21,7 @@ class CameraScreen extends StatelessWidget with BaseController {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FutureBuilder<void>(
-            future: imageController.initializeControllerFuture,
+            future: imageController.cameraController.initialize(),
             builder: (context, snapshot) {
               print(snapshot.connectionState.toString());
               print(snapshot.stackTrace.toString());

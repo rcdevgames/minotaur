@@ -148,29 +148,51 @@ class TambahController extends GetxController with BaseController {
   }
 
   Map<String, String> dataPendukung() {
+    // return {
+    //   'relawan_id': homeController.relawanId.value,
+    //   'kelurahan_id': '${dataArgumen[2]}',
+    //   'nik': nik.text,
+    //   'kk': kk.text,
+    //   'nama': nama.text,
+    //   'hp': hp.text,
+    //   'umur': umur.text,
+    //   'jk': jk.text,
+    //   'kecamatan': kecamatan.text,
+    //   'kelurahan': kelurahan.text,
+    //   'alamat': alamat.text,
+    //   'rw': rw.text,
+    //   'rt': rt.text,
+    //   'pilihanPartai2019': pilihanPartai2019.text,
+    //   'pilihanPartai': pilihanPartai.text,
+    //   'pilihan': jpilihanValue.value,
+    //   'pilihanCapres': jpilihanCapresValue.value,
+    //   'keluarga1': keluarga1.text,
+    //   'keluarga2': keluarga2.text,
+    //   'keluarga3': keluarga3.text,
+    //   'keluarga4': keluarga4.text,
+    //   'keluarga5': keluarga5.text,
+    //   'gps': '${lat.value}, ${long.value}'
+    // };
     return {
       'relawan_id': homeController.relawanId.value,
       'kelurahan_id': '${dataArgumen[2]}',
       'nik': nik.text,
       'kk': kk.text,
       'nama': nama.text,
-      'hp': hp.text,
-      'umur': umur.text,
       'jk': jk.text,
-      'kecamatan': kecamatan.text,
-      'kelurahan': kelurahan.text,
       'alamat': alamat.text,
       'rw': rw.text,
       'rt': rt.text,
-      'pilihanPartai2019': pilihanPartai2019.text,
-      'pilihanPartai': pilihanPartai.text,
-      'pilihan': jpilihanValue.value,
-      'pilihanCapres': jpilihanCapresValue.value,
+      'hp': hp.text,
+      'kenal': jpilihanValue.value,
+      'bersedia': jpilihanCapresValue.value,
       'keluarga1': keluarga1.text,
       'keluarga2': keluarga2.text,
       'keluarga3': keluarga3.text,
       'keluarga4': keluarga4.text,
       'keluarga5': keluarga5.text,
+      'kecamatan':kecamatan.text,
+      'kelurahan':kelurahan.text,
       'gps': '${lat.value}, ${long.value}'
     };
   }
@@ -224,12 +246,14 @@ class TambahController extends GetxController with BaseController {
 
   addPendukungUpload() async {
     final bytes = io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes2 = io.File(imageController.cropImageFotoWajahPath.value).readAsBytesSync();
 
     String img64 = "data:image/jog;base64,"+base64Encode(bytes);
+    String img64_2 = "data:image/jog;base64,"+base64Encode(bytes2);
 
     // print(img64);
-    print(img64.length);
-    printWrapped(img64);
+    // print(img64.length);
+    // printWrapped(img64);
 
     bool isValidate = pendukungFormKey.currentState!.validate();
     if (isValidate) {
@@ -248,17 +272,15 @@ class TambahController extends GetxController with BaseController {
           alamat: alamat.text,
           rw: rw.text,
           rt: rt.text,
-          pilihanPartai2019: pilihanPartai2019.text,
-          pilihanPartai: pilihanPartai.text,
-          pilihan: jpilihanValue.value,
-          pilihanCapres: jpilihanCapresValue.value,
+          kenal: jpilihanValue.value,
+          bersedia: jpilihanCapresValue.value,
           keluarga1: keluarga1.text,
           keluarga2: keluarga2.text,
           keluarga3: keluarga3.text,
           keluarga4: keluarga4.text,
           keluarga5: keluarga5.text,
           img64: img64,
-          img64_2: "",
+          img64_2: img64_2,
           gps: '${lat.value}, ${long.value}');
     }
   }
@@ -315,12 +337,14 @@ class TambahController extends GetxController with BaseController {
 
   editPendukungUpload() async {
     final bytes = io.File(imageController.cropImagePath.value).readAsBytesSync();
+    final bytes2 = io.File(imageController.cropImageFotoWajahPath.value).readAsBytesSync();
 
     String img64 = "data:image/jpg;base64,"+base64Encode(bytes);
+    String img64_2 = "data:image/jpg;base64,"+base64Encode(bytes2);
 
     // print(img64);
-    print(img64.length);
-    printWrapped(img64);
+    // print(img64.length);
+    // printWrapped(img64);
 
     bool isValidate = pendukungFormKey.currentState!.validate();
     if (isValidate) {
@@ -344,7 +368,7 @@ class TambahController extends GetxController with BaseController {
           // pilihan: jpilihanValue.value,
           // pilihanCapres: jpilihanCapresValue.value,
           img64: img64,
-          img64_2: "",
+          img64_2: img64_2,
           // gps: '${lat.value}, ${long.value}'
       );
     }
