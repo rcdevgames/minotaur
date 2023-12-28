@@ -31,16 +31,16 @@ class PendukungModel {
   String toRawJson() => json.encode(toJson());
 
   factory PendukungModel.fromJson(Map<String, dynamic> json) => PendukungModel(
-        id: json["id"],
-        nama: json["nama"],
-        hp: json["hp"],
-        kecamatan: json["kecamatan"],
-        kelurahanId: json["kelurahan_id"],
-        kelurahan: json["kelurahan"],
-        rw: json["rw"],
-        rt: json["rt"],
-        umur: json["umur"],
-        img: json["fotoktp"],
+        id: json["id"]??"",
+        nama: json["nama"]??"",
+        hp: json["hp"]??"",
+        kecamatan: json["kecamatan"]??"",
+        kelurahanId: json["kelurahan_id"]??"",
+        kelurahan: json["kelurahan"]??"",
+        rw: json["rw"]??"",
+        rt: json["rt"]??"",
+        umur: json["umur"]??"",
+        img: json["fotoktp"]??"",
       );
 
   Map<String, dynamic> toJson() => {

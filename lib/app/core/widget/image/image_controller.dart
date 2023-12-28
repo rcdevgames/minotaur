@@ -37,6 +37,7 @@ class ImageController extends GetxController with BaseController {
   @override
   void onInit() async {
     src.value = argumets[0];
+    print("INITIALIZE CAMERA");
     print('_____${argumets[0]}');
     final cameras = await availableCameras();
     cameraController = CameraController(cameras[0], ResolutionPreset.ultraHigh);
@@ -50,6 +51,7 @@ class ImageController extends GetxController with BaseController {
   void onClose() {
     cameraController.dispose();
     _clearCachedFiles();
+    print("DISPOSE CAMERA");
   }
 
   Future<File> compressFile({required File? file}) async {
@@ -71,7 +73,7 @@ class ImageController extends GetxController with BaseController {
     }
   }
 
-  void fileImage(String src) async {
+  void fileImage(String src, BuildContext context) async {
     showLoading('Menyiapkan galeri...');
 
     FilePickerResult? result = await FilePicker.platform.pickFiles();
@@ -85,7 +87,7 @@ class ImageController extends GetxController with BaseController {
       print('>>>>>>>>>>>>>>');
       print(src);
 
-      cropImage(File(img.value), src);
+      cropImage(File(img.value), src, context);
       Get.back();
     } else {
       hideLoading();
@@ -124,7 +126,7 @@ class ImageController extends GetxController with BaseController {
     );
   }
 
-  cropImage(File file, String srcx) async {
+  cropImage(File file, String srcx, BuildContext context) async {
     final img = await compressFile(file: file);
     file = img;
     String dir = "";
@@ -138,7 +140,24 @@ class ImageController extends GetxController with BaseController {
         sourcePath: pathName,
         // compressQuality: 1,
         aspectRatioPresets: [CropAspectRatioPreset.original],
-        compressFormat: ImageCompressFormat.jpg);
+        compressFormat: ImageCompressFormat.jpg,
+        uiSettings: [
+          // ignore: use_build_context_synchronously
+          WebUiSettings(
+            context: context,
+            presentStyle: CropperPresentStyle.dialog,
+            boundary: const CroppieBoundary(
+              width: 520,
+              height: 520,
+            ),
+            viewPort:
+                const CroppieViewPort(width: 480, height: 480, type: 'circle'),
+            enableExif: true,
+            enableZoom: true,
+            showZoomer: true,
+          ),
+        ],
+        );
 
     if (cropImageFile!.path != "") {
       if (srcx == "1") {

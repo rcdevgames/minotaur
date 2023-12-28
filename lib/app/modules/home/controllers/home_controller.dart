@@ -73,8 +73,8 @@ class HomeController extends GetxController with BaseController {
     setUser();
     getPendukung();
     getCountPendukung();
-    // getCount();
-    // setCount();
+    getCount();
+    setCount();
     getLoc();
     getLatlong();
     cronJobRUn();
@@ -115,10 +115,12 @@ class HomeController extends GetxController with BaseController {
   }
 
   setCount() {
-    var dataDecode = jsonDecode(dataCount.value.toString());
-    var dataJson = JumlahModel.fromJson(dataDecode);
-    count.value = dataJson.jumlah;
-    update();
+    if (dataCount.value.isNotEmpty) {
+      var dataDecode = jsonDecode(dataCount.value.toString());
+      var dataJson = JumlahModel.fromJson(dataDecode);
+      count.value = dataJson.jumlah;
+      update();
+    }
   }
 
   getUserData() {

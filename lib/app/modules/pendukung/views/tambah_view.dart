@@ -9,7 +9,6 @@ import 'package:temres_apps/app/core/constant/text_styles.dart';
 import 'package:temres_apps/app/core/helper/base_controller.dart';
 import 'package:temres_apps/app/core/widget/button_fill.dart';
 import 'package:temres_apps/app/core/widget/image/image_controller.dart';
-import 'package:temres_apps/app/core/widget/image2/image_controller.dart';
 import 'package:temres_apps/app/modules/pendukung/controllers/tambah_controller.dart';
 import 'package:temres_apps/app/routes/app_pages.dart';
 
@@ -20,10 +19,11 @@ import '../../../core/widget/form_option_cb.dart';
 import '../../../core/widget/form_option_kec.dart';
 import '../../../core/widget/form_option_kel.dart';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 class TambahView extends GetView<TambahController> with BaseController {
   TambahView({Key? key}) : super(key: key);
   final ImageController imageController = Get.put(ImageController());
-  final ImageController2 imageController2 = Get.put(ImageController2());
 
   @override
   Widget build(BuildContext context) {
@@ -423,7 +423,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
@@ -482,7 +482,11 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               .pallateColors.bgNavBarColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Image.file(
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImagePath.value,
+                                        width: double.infinity,
+                                        height: 300,
+                                      ) : Image.file(
                                         File(imageController
                                             .cropImagePath.value),
                                         width: double.infinity,
@@ -524,8 +528,8 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            Get.toNamed(Routes.CAMERA2,
-                                                parameters: {"image": "1"});
+                                            Get.toNamed(Routes.CAMERA,
+                                                parameters: {"image": "2"});
                                           });
                                         },
                                         child: Column(
@@ -537,7 +541,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.camera_alt,
                                               size: 30,
-                                              color: imageController2
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text(
@@ -558,7 +562,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController2.fileImage('1');
+                                            imageController.fileImage('2', context);
                                           });
                                         },
                                         child: Column(
@@ -570,7 +574,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                             Icon(
                                               Icons.photo_album,
                                               size: 30,
-                                              color: imageController2
+                                              color: imageController
                                                   .pallateColors.primaryColor,
                                             ),
                                             Text('Galeri',
@@ -588,7 +592,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                             height: 100,
                             width: MediaQuery.of(context).size.width,
                             child: Obx(
-                              () => imageController.cropImagePath.value == ''
+                              () => imageController.cropImageFotoWajahPath.value == ''
                                   ? Container(
                                       alignment: Alignment.center,
                                       padding: EdgeInsets.all(10),
@@ -617,12 +621,16 @@ class TambahView extends GetView<TambahController> with BaseController {
                                               .pallateColors.bgNavBarColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Image.file(
-                                        File(imageController2
-                                            .cropImagePath.value),
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImageFotoWajahPath.value,
                                         width: double.infinity,
                                         height: 300,
-                                      ),
+                                      ) : Image.file(
+                                        File(imageController
+                                            .cropImageFotoWajahPath.value),
+                                        width: double.infinity,
+                                        height: 300,
+                                      )
                                     ),
                             ),
                           ),

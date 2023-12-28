@@ -17,6 +17,8 @@ import '../../../core/widget/field_outline.dart';
 import '../../../core/widget/form_option.dart';
 import '../../../core/widget/image/image_controller.dart';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseController {
   TambahKeluargaView({Key? key}) : super(key: key);
   final ImageController imageController = Get.put(ImageController());
@@ -361,7 +363,7 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
@@ -419,7 +421,11 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                               .pallateColors.bgNavBarColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Image.file(
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImagePath.value,
+                                        width: double.infinity,
+                                        height: 300,
+                                      ) : Image.file(
                                         File(imageController
                                             .cropImagePath.value),
                                         width: double.infinity,
@@ -495,7 +501,7 @@ class TambahKeluargaView extends GetView<TambahKeluargaController> with BaseCont
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('2');
+                                            imageController.fileImage('2', context);
                                           });
                                         },
                                         child: Column(

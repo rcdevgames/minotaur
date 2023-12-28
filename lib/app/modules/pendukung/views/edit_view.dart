@@ -23,6 +23,8 @@ import '../../../core/widget/form_option_kel.dart';
 import '../../../core/widget/image/image_controller.dart';
 import '../provider/pendukung_model.dart';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 class EditView extends GetView<TambahController> with BaseController {
 
   final ApiProvider apiProvider = ApiProvider();
@@ -207,7 +209,7 @@ class EditView extends GetView<TambahController> with BaseController {
                                               const Duration(microseconds: 100),
                                               () {
                                             hideLoading();
-                                            imageController.fileImage('1');
+                                            imageController.fileImage('1', context);
                                           });
                                         },
                                         child: Column(
@@ -266,9 +268,152 @@ class EditView extends GetView<TambahController> with BaseController {
                                               .pallateColors.bgNavBarColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Image.file(
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImagePath.value,
+                                        width: double.infinity,
+                                        height: 300,
+                                      ) : Image.file(
                                         File(imageController
                                             .cropImagePath.value),
+                                        width: double.infinity,
+                                        height: 300,
+                                      ),
+                                    ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          onTap: (() {
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: Text(
+                                  "Pilih foto",
+                                  style: mLabelStyle,
+                                ),
+                                actions: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      InkWell(
+                                        onTap: () {
+                                          Get.back();
+                                          // showLoading('loading Progres');
+                                          Future.delayed(
+                                              const Duration(microseconds: 100),
+                                              () {
+                                            hideLoading();
+                                            Get.toNamed(Routes.CAMERA,
+                                                parameters: {"image": "2"});
+                                          });
+                                        },
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.camera_alt,
+                                              size: 30,
+                                              color: imageController
+                                                  .pallateColors.primaryColor,
+                                            ),
+                                            Text(
+                                              'Camera',
+                                              style: kHintTextStyle,
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 50,
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          Get.back();
+
+                                          Future.delayed(
+                                              const Duration(microseconds: 100),
+                                              () {
+                                            hideLoading();
+                                            imageController.fileImage('2', context);
+                                          });
+                                        },
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Icon(
+                                              Icons.photo_album,
+                                              size: 30,
+                                              color: imageController
+                                                  .pallateColors.primaryColor,
+                                            ),
+                                            Text('Galeri',
+                                                style: kHintTextStyle)
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                          child: SizedBox(
+                            height: 100,
+                            width: MediaQuery.of(context).size.width,
+                            child: Obx(
+                              () => imageController.cropImageFotoWajahPath.value == ''
+                                  ? Container(
+                                      alignment: Alignment.center,
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                            color:
+                                                PallateColors().primaryColor),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Text(
+                                        // 'Kirim Foto\r\n * tidak wajib',
+                                        'Kirim Foto',
+                                        style: kHintTextStyle,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )
+                                  : Container(
+                                      height: 100,
+                                      width: MediaQuery.of(context).size.width,
+                                      margin: const EdgeInsets.only(
+                                          top: 10, bottom: 10),
+                                      padding: const EdgeInsets.only(
+                                          top: 10, bottom: 10),
+                                      decoration: BoxDecoration(
+                                          color: controller
+                                              .pallateColors.bgNavBarColor,
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: kIsWeb ? Image.network(
+                                        imageController.cropImageFotoWajahPath.value,
+                                        width: double.infinity,
+                                        height: 300,
+                                      ) : Image.file(
+                                        File(imageController
+                                            .cropImageFotoWajahPath.value),
                                         width: double.infinity,
                                         height: 300,
                                       ),
