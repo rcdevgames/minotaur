@@ -115,10 +115,12 @@ class HomeController extends GetxController with BaseController {
   }
 
   setCount() {
-    var dataDecode = jsonDecode(dataCount.value.toString());
-    var dataJson = JumlahModel.fromJson(dataDecode);
-    count.value = dataJson.jumlah;
-    update();
+    if (dataCount != '') {
+      var dataDecode = jsonDecode(dataCount.value.toString());
+      var dataJson = JumlahModel.fromJson(dataDecode);
+      count.value = dataJson.jumlah;
+      update();
+    }
   }
 
   getUserData() {
