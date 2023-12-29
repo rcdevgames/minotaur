@@ -359,7 +359,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                                       const SizedBox(
                                         width: 50,
                                       ),
-                                      InkWell(
+                                      kIsWeb ? const SizedBox() : InkWell(
                                         onTap: () {
                                           Get.back();
 

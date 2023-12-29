@@ -222,7 +222,7 @@ class PendukungProvider extends GetConnect {
     box.put('9', {'nama': 'PASREPAN', 'id': '9', 'kabkota': 'PASURUAN'});
     box.put('10', {'nama': 'PRIGEN', 'id': '10', 'kabkota': 'PASURUAN'});
     box.put('11', {'nama': 'KRATON', 'id': '11', 'kabkota': 'PASURUAN'});
-    box.put('12', {'nama': 'POH JENTREK', 'id': '12', 'kabkota': 'PASURUAN'});
+    box.put('12', {'nama': 'POH JENTREK', 'id': '12', 'kabkota': 'PASURUAN'}); //--
     box.put('13', {'nama': 'NGULING', 'id': '13', 'kabkota': 'PASURUAN'});
     box.put('14', {'nama': 'REJOSO', 'id': '14', 'kabkota': 'PASURUAN'});
     box.put('15', {'nama': 'TOSARI', 'id': '15', 'kabkota': 'PASURUAN'});
@@ -238,7 +238,7 @@ class PendukungProvider extends GetConnect {
     box.put('23', {'nama': 'KRUCIL', 'id': '23', 'kabkota': 'PROBOLINGGO'});
     box.put('24', {'nama': 'GENDING', 'id': '24', 'kabkota': 'PROBOLINGGO'});
     box.put('25', {'nama': 'TIRIS', 'id': '25', 'kabkota': 'PROBOLINGGO'});
-    box.put('26', {'nama': 'BANYUNYAR', 'id': '26', 'kabkota': 'PROBOLINGGO'});
+    box.put('26', {'nama': 'BANYUNYAR', 'id': '26', 'kabkota': 'PROBOLINGGO'}); //--
 
     box.put('27', {'nama': 'KADEMANGAN', 'id': '27', 'kabkota': 'KOTA PROBOLINGGO'});
     box.put('28', {'nama': 'WONOASIH', 'id': '28', 'kabkota': 'KOTA PROBOLINGGO'});
@@ -250,12 +250,12 @@ class PendukungProvider extends GetConnect {
     box.put('33', {'nama': 'SENDURO', 'id': '33', 'kabkota': 'LUMAJANG'});
     box.put('34', {'nama': 'GUCIALIT', 'id': '34', 'kabkota': 'LUMAJANG'});
     box.put('35', {'nama': 'PADANG', 'id': '35', 'kabkota': 'LUMAJANG'});
-    box.put('36', {'nama': 'KEDUNG JAJANG', 'id': '36', 'kabkota': 'LUMAJANG'});
+    box.put('36', {'nama': 'KEDUNG JAJANG', 'id': '36', 'kabkota': 'LUMAJANG'}); //--
     box.put('37', {'nama': 'KLAKAH', 'id': '37', 'kabkota': 'LUMAJANG'});
-    box.put('38', {'nama': 'RANDU AGUNG', 'id': '38', 'kabkota': 'LUMAJANG'});
+    box.put('38', {'nama': 'RANDU AGUNG', 'id': '38', 'kabkota': 'LUMAJANG'}); //--
     box.put('39', {'nama': 'JATIROTO', 'id': '39', 'kabkota': 'LUMAJANG'});
     box.put('40', {'nama': 'RANUYOSO', 'id': '40', 'kabkota': 'LUMAJANG'});
-    box.put('41', {'nama': 'ROWO KANGKUNG', 'id': '41', 'kabkota': 'LUMAJANG'});
+    box.put('41', {'nama': 'ROWO KANGKUNG', 'id': '41', 'kabkota': 'LUMAJANG'}); //--
 
     box.put('42', {'nama': 'JEMBER', 'id': '42', 'kabkota': 'JEMBER'});
     box.put('43', {'nama': 'PANTI', 'id': '43', 'kabkota': 'JEMBER'});
@@ -290,9 +290,9 @@ class PendukungProvider extends GetConnect {
 
     box.put('71', {'nama': 'KLOJEN', 'id': '71', 'kabkota': 'KOTA MALANG'});
     box.put('72', {'nama': 'BLIMBING', 'id': '72', 'kabkota': 'KOTA MALANG'});
-    box.put('73', {'nama': 'KEDUNG KADANG', 'id': '73', 'kabkota': 'KOTA MALANG'});
+    box.put('73', {'nama': 'KEDUNGKADANG', 'id': '73', 'kabkota': 'KOTA MALANG'}); //--
 
-    box.put('74', {'nama': 'GAMPINGREJO', 'id': '74', 'kabkota': 'KEDIRI'});
+    box.put('74', {'nama': 'GAMPINGREJO', 'id': '74', 'kabkota': 'KEDIRI'}); //--
     box.put('75', {'nama': 'PAPAR', 'id': '75', 'kabkota': 'KEDIRI'});
     box.put('76', {'nama': 'NGASEM', 'id': '76', 'kabkota': 'KEDIRI'});
     box.put('77', {'nama': 'PURWOASRI', 'id': '77', 'kabkota': 'KEDIRI'});
@@ -300,7 +300,7 @@ class PendukungProvider extends GetConnect {
     box.put('79', {'nama': 'PARE', 'id': '79', 'kabkota': 'KEDIRI'});
     box.put('80', {'nama': 'KANDANGAN', 'id': '80', 'kabkota': 'KEDIRI'});
     box.put('81', {'nama': 'NGANCAR', 'id': '81', 'kabkota': 'KEDIRI'});
-    box.put('82', {'nama': 'PLOSO KLATEN', 'id': '82', 'kabkota': 'KEDIRI'});
+    box.put('82', {'nama': 'PLOSO KLATEN', 'id': '82', 'kabkota': 'KEDIRI'}); //--
     box.put('83', {'nama': 'NGADILUWIH', 'id': '83', 'kabkota': 'KEDIRI'});
     box.put('84', {'nama': 'RINGINREJO', 'id': '84', 'kabkota': 'KEDIRI'});
     box.put('85', {'nama': 'MOJO', 'id': '85', 'kabkota': 'KEDIRI'});
@@ -308,7 +308,7 @@ class PendukungProvider extends GetConnect {
     box.put('86', {'nama': 'KOTA', 'id': '86', 'kabkota': 'KOTA KEDIRI'});
     box.put('87', {'nama': 'MOJOROTO', 'id': '87', 'kabkota': 'KOTA KEDIRI'});
 
-    box.put('88', {'nama': 'GUMARANG', 'id': '88', 'kabkota': 'MADIUN'});
+    box.put('88', {'nama': 'GUMARANG', 'id': '88', 'kabkota': 'MADIUN'}); //--
     box.put('89', {'nama': 'KARE', 'id': '89', 'kabkota': 'MADIUN'});
     box.put('90', {'nama': 'WUNGU', 'id': '90', 'kabkota': 'MADIUN'});
     box.put('91', {'nama': 'DAGANGAN', 'id': '91', 'kabkota': 'MADIUN'});
@@ -331,7 +331,7 @@ class PendukungProvider extends GetConnect {
     box.put('106', {'nama': 'JENU', 'id': '106', 'kabkota': 'TUBAN'});
     box.put('107', {'nama': 'TAMBAKBOYO', 'id': '107', 'kabkota': 'TUBAN'});
 
-    box.put('108', {'nama': 'KADEWAN', 'id': '108', 'kabkota': 'BOJONEGORO'});
+    box.put('108', {'nama': 'KADEWAN', 'id': '108', 'kabkota': 'BOJONEGORO'}); //----
     box.put('109', {'nama': 'KASIMAN', 'id': '109', 'kabkota': 'BOJONEGORO'});
     box.put('110', {'nama': 'SUKOSEWU', 'id': '110', 'kabkota': 'BOJONEGORO'});
     box.put('111', {'nama': 'KANOR', 'id': '111', 'kabkota': 'BOJONEGORO'});
@@ -360,7 +360,7 @@ class PendukungProvider extends GetConnect {
     box.put('132', {'nama': 'PASEAN', 'id': '132', 'kabkota': 'PAMEKASAN'});
     box.put('133', {'nama': 'PEGANTENAN', 'id': '133', 'kabkota': 'PAMEKASAN'});
     box.put('134', {'nama': 'KADUR', 'id': '134', 'kabkota': 'PAMEKASAN'});
-    box.put('135', {'nama': 'PALENGAAN', 'id': '135', 'kabkota': 'PAMEKASAN'});
+    box.put('135', {'nama': 'PALENGAAN', 'id': '135', 'kabkota': 'PAMEKASAN'}); //--
     box.put('136', {'nama': 'PADEMAWU', 'id': '136', 'kabkota': 'PAMEKASAN'});
     box.put('137', {'nama': 'GALIS', 'id': '137', 'kabkota': 'PAMEKASAN'});
     box.put('138', {'nama': 'LARANGAN', 'id': '138', 'kabkota': 'PAMEKASAN'});
@@ -2443,5 +2443,30 @@ class PendukungProvider extends GetConnect {
     box.put('1960', {'nama': 'SUDIMORO', 'id': '1960', 'kecamatan': 'BULULAWANG'});
     box.put('1961', {'nama': 'SUKONOLO', 'id': '1961', 'kecamatan': 'BULULAWANG'});
     box.put('1962', {'nama': 'WANDANPURO', 'id': '1962', 'kecamatan': 'BULULAWANG'});
+
+    box.put("1962", {"id":"1962","nama":"Sungi Wetan","kecamatan":"POH JENTREK"});
+    box.put("1963", {"id":"1963","nama":"Warung Dowo","kecamatan":"POH JENTREK"});
+    box.put("1964", {"id":"1964","nama":"Susukan Rejo","kecamatan":"POH JENTREK"});
+    box.put("1965", {"id":"1965","nama":"Sungi Kulon","kecamatan":"POH JENTREK"});
+    box.put("1966", {"id":"1966","nama":"Pleret","kecamatan":"POH JENTREK"});
+    box.put("1967", {"id":"1967","nama":"Logowok","kecamatan":"POH JENTREK"});
+    box.put("1968", {"id":"1968","nama":"Paras Rejo","kecamatan":"POH JENTREK"});
+    box.put("1969", {"id":"1969","nama":"Sukorejo","kecamatan":"POH JENTREK"});
+    box.put("1970", {"id":"1970","nama":"Madyopuro","kecamatan":"KEDUNGKANDANG"});
+    box.put("1971", {"id":"1971","nama":"Kotalama","kecamatan":"KEDUNGKANDANG"});
+    box.put("1972", {"id":"1972","nama":"Mergosono","kecamatan":"KEDUNGKANDANG"});
+    box.put("1973", {"id":"1973","nama":"Bumiayu","kecamatan":"KEDUNGKANDANG"});
+    box.put("1974", {"id":"1974","nama":"Wonokoyo","kecamatan":"KEDUNGKANDANG"});
+    box.put("1975", {"id":"1975","nama":"Buring","kecamatan":"KEDUNGKANDANG"});
+    box.put("1976", {"id":"1976","nama":"Kedungkandang","kecamatan":"KEDUNGKANDANG"});
+    box.put("1977", {"id":"1977","nama":"Lesanpuro","kecamatan":"KEDUNGKANDANG"});
+    box.put("1978", {"id":"1978","nama":"Sawojajar","kecamatan":"KEDUNGKANDANG"});
+    box.put("1979", {"id":"1979","nama":"Cemorokandang","kecamatan":"KEDUNGKANDANG"});
+    box.put("1980", {"id":"1980","nama":"Beji","kecamatan":"KADEWAN"});
+    box.put("1981", {"id":"1981","nama":"Hargomulyo","kecamatan":"KADEWAN"});
+    box.put("1982", {"id":"1982","nama":"Kadewan","kecamatan":"KADEWAN"});
+    box.put("1983", {"id":"1983","nama":"Kawengan","kecamatan":"KADEWAN"});
+    box.put("1984", {"id":"1984","nama":"Wonocolo","kecamatan":"KADEWAN"});
+
   }
 }
