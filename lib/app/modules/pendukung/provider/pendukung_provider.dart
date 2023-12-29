@@ -290,7 +290,7 @@ class PendukungProvider extends GetConnect {
 
     box.put('71', {'nama': 'KLOJEN', 'id': '71', 'kabkota': 'KOTA MALANG'});
     box.put('72', {'nama': 'BLIMBING', 'id': '72', 'kabkota': 'KOTA MALANG'});
-    box.put('73', {'nama': 'KEDUNGKADANG', 'id': '73', 'kabkota': 'KOTA MALANG'}); //--
+    box.put('73', {'nama': 'KEDUNGKANDANG', 'id': '73', 'kabkota': 'KOTA MALANG'}); //--
 
     box.put('74', {'nama': 'GAMPINGREJO', 'id': '74', 'kabkota': 'KEDIRI'}); //--
     box.put('75', {'nama': 'PAPAR', 'id': '75', 'kabkota': 'KEDIRI'});
@@ -345,6 +345,7 @@ class PendukungProvider extends GetConnect {
     box.put('119', {'nama': 'NGRAHO', 'id': '119', 'kabkota': 'BOJONEGORO'});
     box.put('120', {'nama': 'PURWOSARI', 'id': '120', 'kabkota': 'BOJONEGORO'});
     box.put('121', {'nama': 'MALO', 'id': '121', 'kabkota': 'BOJONEGORO'});
+    box.put('121', {'nama': 'BOJONEGORO', 'id': '121', 'kabkota': 'BOJONEGORO'});
 
     box.put('122', {'nama': 'TORJUN', 'id': '122', 'kabkota': 'SAMPANG'});
     box.put('123', {'nama': 'SRESEH', 'id': '123', 'kabkota': 'SAMPANG'});
@@ -2444,29 +2445,39 @@ class PendukungProvider extends GetConnect {
     box.put('1961', {'nama': 'SUKONOLO', 'id': '1961', 'kecamatan': 'BULULAWANG'});
     box.put('1962', {'nama': 'WANDANPURO', 'id': '1962', 'kecamatan': 'BULULAWANG'});
 
-    box.put("1962", {"id":"1962","nama":"Sungi Wetan","kecamatan":"POH JENTREK"});
-    box.put("1963", {"id":"1963","nama":"Warung Dowo","kecamatan":"POH JENTREK"});
-    box.put("1964", {"id":"1964","nama":"Susukan Rejo","kecamatan":"POH JENTREK"});
-    box.put("1965", {"id":"1965","nama":"Sungi Kulon","kecamatan":"POH JENTREK"});
-    box.put("1966", {"id":"1966","nama":"Pleret","kecamatan":"POH JENTREK"});
-    box.put("1967", {"id":"1967","nama":"Logowok","kecamatan":"POH JENTREK"});
-    box.put("1968", {"id":"1968","nama":"Paras Rejo","kecamatan":"POH JENTREK"});
-    box.put("1969", {"id":"1969","nama":"Sukorejo","kecamatan":"POH JENTREK"});
-    box.put("1970", {"id":"1970","nama":"Madyopuro","kecamatan":"KEDUNGKANDANG"});
-    box.put("1971", {"id":"1971","nama":"Kotalama","kecamatan":"KEDUNGKANDANG"});
-    box.put("1972", {"id":"1972","nama":"Mergosono","kecamatan":"KEDUNGKANDANG"});
-    box.put("1973", {"id":"1973","nama":"Bumiayu","kecamatan":"KEDUNGKANDANG"});
-    box.put("1974", {"id":"1974","nama":"Wonokoyo","kecamatan":"KEDUNGKANDANG"});
-    box.put("1975", {"id":"1975","nama":"Buring","kecamatan":"KEDUNGKANDANG"});
-    box.put("1976", {"id":"1976","nama":"Kedungkandang","kecamatan":"KEDUNGKANDANG"});
-    box.put("1977", {"id":"1977","nama":"Lesanpuro","kecamatan":"KEDUNGKANDANG"});
-    box.put("1978", {"id":"1978","nama":"Sawojajar","kecamatan":"KEDUNGKANDANG"});
-    box.put("1979", {"id":"1979","nama":"Cemorokandang","kecamatan":"KEDUNGKANDANG"});
-    box.put("1980", {"id":"1980","nama":"Beji","kecamatan":"KADEWAN"});
-    box.put("1981", {"id":"1981","nama":"Hargomulyo","kecamatan":"KADEWAN"});
-    box.put("1982", {"id":"1982","nama":"Kadewan","kecamatan":"KADEWAN"});
-    box.put("1983", {"id":"1983","nama":"Kawengan","kecamatan":"KADEWAN"});
-    box.put("1984", {"id":"1984","nama":"Wonocolo","kecamatan":"KADEWAN"});
+    box.put("1962", {"id":"1962","nama":"SUNGI WETAN","kecamatan":"POH JENTREK"});
+    box.put("1963", {"id":"1963","nama":"WARUNG DOWO","kecamatan":"POH JENTREK"});
+    box.put("1964", {"id":"1964","nama":"SUSUKAN REJO","kecamatan":"POH JENTREK"});
+    box.put("1965", {"id":"1965","nama":"SUNGI KULON","kecamatan":"POH JENTREK"});
+    box.put("1966", {"id":"1966","nama":"PLERET","kecamatan":"POH JENTREK"});
+    box.put("1967", {"id":"1967","nama":"LOGOWOK","kecamatan":"POH JENTREK"});
+    box.put("1968", {"id":"1968","nama":"PARAS REJO","kecamatan":"POH JENTREK"});
+    box.put("1969", {"id":"1969","nama":"SUKOREJO","kecamatan":"POH JENTREK"});
+    box.put("1970", {"id":"1970","nama":"MADYOPURO","kecamatan":"KEDUNGKANDANG"});
+    box.put("1971", {"id":"1971","nama":"KOTALAMA","kecamatan":"KEDUNGKANDANG"});
+    box.put("1972", {"id":"1972","nama":"MERGOSONO","kecamatan":"KEDUNGKANDANG"});
+    box.put("1973", {"id":"1973","nama":"BUMIAYU","kecamatan":"KEDUNGKANDANG"});
+    box.put("1974", {"id":"1974","nama":"WONOKOYO","kecamatan":"KEDUNGKANDANG"});
+    box.put("1975", {"id":"1975","nama":"BURING","kecamatan":"KEDUNGKANDANG"});
+    box.put("1976", {"id":"1976","nama":"KEDUNGKANDANG","kecamatan":"KEDUNGKANDANG"});
+    box.put("1977", {"id":"1977","nama":"LESANPURO","kecamatan":"KEDUNGKANDANG"});
+    box.put("1978", {"id":"1978","nama":"SAWOJAJAR","kecamatan":"KEDUNGKANDANG"});
+    box.put("1979", {"id":"1979","nama":"CEMOROKANDANG","kecamatan":"KEDUNGKANDANG"});
+    box.put("1980", {"id":"1980","nama":"BEJI","kecamatan":"KADEWAN"});
+    box.put("1981", {"id":"1981","nama":"HARGOMULYO","kecamatan":"KADEWAN"});
+    box.put("1982", {"id":"1982","nama":"KADEWAN","kecamatan":"KADEWAN"});
+    box.put("1983", {"id":"1983","nama":"KAWENGAN","kecamatan":"KADEWAN"});
+    box.put("1984", {"id":"1984","nama":"WONOCOLO","kecamatan":"KADEWAN"});
+
+    box.put('1985', {'nama': 'Campurejo', 'id': '1985', 'kecamatan': 'BOJONEGORO'});
+    box.put('1986', {'nama': 'Kalirejo', 'id': '1986', 'kecamatan': 'BOJONEGORO'});
+    box.put('1987', {'nama': 'Kauman', 'id': '1987', 'kecamatan': 'BOJONEGORO'});
+    box.put('1988', {'nama': 'Mulyoagung', 'id': '1988', 'kecamatan': 'BOJONEGORO'});
+    box.put('1989', {'nama': 'Pacul', 'id': '1989', 'kecamatan': 'BOJONEGORO'});
+    box.put('1990', {'nama': 'Semanding', 'id': '1990', 'kecamatan': 'BOJONEGORO'});
+    box.put('1991', {'nama': 'Sukorejo', 'id': '1991', 'kecamatan': 'BOJONEGORO'});
+    box.put('1992', {'nama': 'Jetak', 'id': '1992', 'kecamatan': 'BOJONEGORO'});
+    box.put('1993', {'nama': 'Sumbang', 'id': '1993', 'kecamatan': 'BOJONEGORO'});
 
   }
 }
