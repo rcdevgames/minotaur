@@ -231,7 +231,6 @@ class PendukungProvider extends GetConnect {
     box.put('17', {'nama': 'BUGUL KIDUL', 'id': '17', 'kabkota': 'KOTA PASURUAN'});
     box.put('18', {'nama': 'PURWOREJO', 'id': '18', 'kabkota': 'KOTA PASURUAN'});
     box.put('19', {'nama': 'GADING REJO', 'id': '19', 'kabkota': 'KOTA PASURUAN'});
-    box.put('20', {'nama': 'PURWOREJO', 'id': '20', 'kabkota': 'KOTA PASURUAN'});
 
     box.put('21', {'nama': 'MARON', 'id': '21', 'kabkota': 'PROBOLINGGO'});
     box.put('22', {'nama': 'DRINGU', 'id': '22', 'kabkota': 'PROBOLINGGO'});
@@ -2478,6 +2477,8 @@ class PendukungProvider extends GetConnect {
     box.put('1991', {'nama': 'Sukorejo', 'id': '1991', 'kecamatan': 'BOJONEGORO'});
     box.put('1992', {'nama': 'Jetak', 'id': '1992', 'kecamatan': 'BOJONEGORO'});
     box.put('1993', {'nama': 'Sumbang', 'id': '1993', 'kecamatan': 'BOJONEGORO'});
+
+    box.put('1994', {'nama': 'TEGALGONDO', 'id': '1994', 'kecamatan': 'KARANG PLOSO'});
 
   }
 }
