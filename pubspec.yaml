@@ -1,5 +1,5 @@
 name: temres_apps
-version: 1.2.0+4
+version: 1.2.1+5
 publish_to: none
 description: Temres 2024.
 environment:

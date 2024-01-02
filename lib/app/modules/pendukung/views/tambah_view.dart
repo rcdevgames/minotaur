@@ -336,7 +336,7 @@ class TambahView extends GetView<TambahController> with BaseController {
                         RadioGroup<String>.builder(
                           groupValue: controller.jpilihanCapres.value,
                           onChanged: (value) {
-                            controller.jpilihanCapresValue.value = value!;
+                            controller.jpilihanCapres.value = value!;
 
                             (value == controller.capresList[0])
                                 ? controller.jpilihanCapresValue.value = '1'
